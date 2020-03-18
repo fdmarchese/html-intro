@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Federico Marchese" />
+
+    <link rel="shortcut icon" href="../../resources/favicon.ico" />
+
+    <title>Trabajando con arrays</title>
+
+    <link rel="stylesheet" href="../../resources/css/bootstrap.min.css" />
+</head>
+
+<body>
+    <script src="../../navbar.js"></script>
+
+    <main class="container mt-3">
+        <div class="row">
+            <div class="col">
+                <h1 class="text-center">Trabajando con arrays</h1>
+                <div class="alert alert-info">
+                    El objeto <span class="badge badge-dark">Array</span> de JavaScript es un objeto global que es usado
+                    en la construcción de arrays, que son objetos tipo lista de alto nivel.
+                    <br />
+                    Los arrays son uno de los tipos que javascript maneja y nos permite administrar colecciones de
+                    objetos.
+                </div>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+            <div class="col-8">
+                <header>
+                    <h2>Cómo utilizar los arrays</h2>
+                    <small class="text-muted">ver archivo "arrays.js"</small>
+                </header>
+                <p class="mt-3">
+                    Para crear un array podemos hacer lo siguiente:
+                    <ul>
+                        <li>
+                            Para crear un nuevo array vacío lo hacemos de la siguiente forma:
+                            <code>var array = [];</code>
+                        </li>
+                        <li>
+                            Si bien podemos utilizar new para crear un nuevo array de la siguiente forma:
+                            <code>var array = new Array();</code>, se recomienda no utilizar esta nomenclatura para
+                            evitar complejizar la lectura o llegar a comportamientos indeseados.
+                        </li>
+                        <li>
+                            Si lo que deseamos es crear un nuevo array inicializado con los valores que queremos,
+                            debemos hacerlo de la siguiente forma:
+                            <code>var arrayNumeros = ["uno", "dos", "tres"];</code>
+                        </li>
+                    </ul>
+                </p>
+            </div>
+            <div class="col-4">
+                <img src="../imgs/creando-arrays.PNG" width="100%" />
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+            <div class="col-8">
+                <header>
+                    <h2>Agregar, acceder y quitar elementos de un array</h2>
+                    <small class="text-muted">ver archivo "arrays.js"</small>
+                </header>
+                <p class="mt-3">
+                    Una vez que tenemos un array las primeras acciones que necesitaremos hacer será adicionar elementos,
+                    acceder a dichos elementos y eliminar elementos de las colecciones. Para realizar las acciones
+                    descriptas tenemos funcionalidades en javascript que exponen los comportamientos según se detalla a
+                    continuación:
+                    <ul>
+                        <li>
+                            Partimos de la premisa que se creo una nueva variable de la siguiente forma:
+                            <code>var frutas = [];</code>
+                        </li>
+                        <li>
+                            Podemos adicionar nuevos elementos al array <span class="badge badge-dark">frutas</span>
+                            utilizando el método push(nuevoElemento). En este ejemplo podríamos adicionar una fruta de
+                            la siguiente forma : <code>frutas.push("manzana");</code>
+                            <br />
+                            Realizando dicho push, al final de la colección adicionamos el elemento "manzana".
+                        </li>
+                        <li>
+                            Si queremos acceder a los elementos de un array podemos hacerlo accediendo directamente a la
+                            posición del elemento que queremos visualizar, teniendo en cuenta que el índice se calcula
+                            como zero-based (esto quiere decir que comienza desde cero). Por ejemplo, para acceder al
+                            primer elemento de la colección de frutas podemos hacerlo de la siguiente forma
+                            <code>var primerElemento = frutas[0];</code>
+                            <br />
+                            Si se intenta acceder por índice a un elemento que no existe en el array esto retornará
+                            <span class="badge badge-danger">undefined</span>.
+                            <br />
+                            Por ejemplo, si hacemos <code>var sinElemento = frutas[200];</code> la variable sinElemento
+                            tendrá el valor undefined.
+                        </li>
+                        <li>
+                            Si lo que se quiere es iterar por los elementos dentro de un array se pueden utilizar las
+                            estructuras de loop <span class="badge badge-dark">for</span>.
+                            <br />
+                            Podemos utilizar una estructura de for clásico como la siguiente:
+                            <br />
+                            <img src="../imgs/js-for.PNG" width="300px" />
+                            <br />
+                            O bien podemos utilizar una estructura de javascript del tipo for-of:
+                            <img src="../imgs/js-for-of.PNG" width="300px" />
+                        </li>
+                        <li>
+                            Otra forma disponible para acceder a los elementos de un array es a trav&eacute;s de
+                            la funci&oacute;n <span class="badge badge-dark">pop()</span>. La funci&oacute;n pop de
+                            javascript permite extraer de un array el &uacute;ltimo elemento de la colecci&oacute;n, con
+                            lo que no solo obtenemos una referencia del elemento, sino que &eacute;ste es removido del
+                            array.
+                            <br />
+                            En el siguiente c&oacute;digo la variable elemento tiene el valor que ten&iacute;a el
+                            &uacute;ltimo elemento que exist&iacute;a en el array al mismo tiempo que fue removido del
+                            mismo.
+                            <br />
+                            <code>var elemento = frutas.pop();</code>
+                        </li>
+                    </ul>
+                </p>
+            </div>
+            <div class="col-4">
+                <div class="row">
+                    <div class="col">
+                        <input type="text" id="nuevaFruta" />
+                    </div>
+                    <div class="col">
+                        <button class="btn btn-primary" onclick="agregarFruta();">
+                            Agregar fruta
+                        </button>
+                    </div>
+                </div>
+                <hr />
+                <div class="row">
+                    <div class="col">
+                        <button class="btn btn-primary" onclick="accederPrimerFruta();">
+                            Acceder al primer elemento
+                        </button>
+                    </div>
+                </div>
+                <hr />
+                <div class="row">
+                    <div class="col">
+                        <button class="btn btn-primary" onclick="hacerPopDeFruta();">
+                            Hacer pop
+                        </button>
+                    </div>
+                </div>
+                <hr />
+                <div class="row">
+                    <div class="col">
+                        <button class="btn btn-primary" onclick="forEachFrutaAlert();">
+                            Alert de todas las frutas
+                        </button>
+                    </div>
+                </div>
+                <hr />
+                <h4>Elementos que contiene el array frutas:</h4>
+                <hr />
+                <div class="row">
+                    <div class="col" id="arrayFrutas">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="alert alert-warning">
+            Para mayor detalles en el manejo de arrays referirse a los siguientes enlaces:
+            <ul>
+                <li>
+                    <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array">
+                        https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.w3schools.com/js/js_arrays.asp">
+                        https://www.w3schools.com/js/js_arrays.asp
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </main>
+
+    <div class="row">
+        <div class="col text-center">
+            <a class="btn btn-lg btn-outline-info" href="../7/objetos.html">
+                Ir a la siguiente sección >>
+            </a>
+        </div>
+    </div>
+
+    <script src="../../footer.js"></script>
+
+    <script type="text/javascript" src="arrays.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Federico Marchese" />
+
+    <link rel="shortcut icon" href="../../resources/favicon.ico" />
+
+    <title>Conceptos básicos sobre estilos</title>
+
+    <link rel="stylesheet" href="../../resources/css/bootstrap.min.css" />
+</head>
+
+<body>
+    <script src="../../navbar.js"></script>
+
+    <main class="container mt-3">
+
+        <h1>Conceptos básicos sobre estilos</h1>
+        <div class="row mt-3">
+            <div class="col">
+                <div class="alert alert-info">
+                    Hojas de Estilo en Cascada (del inglés Cascading Style Sheets) o CSS es el lenguaje utilizado para
+                    describir
+                    la presentación de documentos HTML o XML, esto incluye varios lenguajes basados en XML como son
+                    XHTML o SVG. CSS describe como debe ser renderizado el elemento estructurado en pantalla, en papel,
+                    hablado o en
+                    otros medios.
+                    Básicamente existen 3 formas de incorporar estilos css a un documento html: Estilos en línea,
+                    Estilos embebidos y Archivos externos.
+                </div>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+            <div class="offset-2 col-8">
+                <h2>Estilos en línea</h2>
+                <p>
+                    Una de las técnicas más simples para incorporar estilos CSS a un documento HTML es la de asignar los
+                    estilos
+                    dentro de las etiquetas por medio del atributo <span class="badge badge-info">style</span>.
+                </p>
+                <figure class="figure">
+                    <img src="../imgs/estilos-en-linea.png" class="figure-img img-fluid rounded" alt="ejemplo">
+                    <figcaption class="figure-caption">Este es un ejemplo de uso de estilos en línea.</figcaption>
+                </figure>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+            <div class="offset-2 col-8">
+                <h2>Estilos embebidos</h2>
+                <p>
+                    Una mejor alternativa es insertar los estilos en la cabecera del documento y luego usar referencias
+                    para afectar los elementos HTML correspondientes.
+                    El elemento <span class="badge badge-info">&lt;style&gt;</span> permite a los desarrolladores
+                    agrupar estilos CSS dentro del documento.
+                </p>
+                <figure class="figure">
+                    <img src="../imgs/estilos-embebidos.png" class="figure-img img-fluid rounded" alt="ejemplo">
+                    <figcaption class="figure-caption">Este es un ejemplo de uso de estilos embebidos.</figcaption>
+                </figure>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+            <div class="offset-2 col-8">
+                <h2>Archivos externos</h2>
+                <p>
+                    Declarar los estilos en la cabecera del documento ahorra espacio y vuelve al código más consistente
+                    y actualizable, pero nos requiere hacer una copia de cada grupo de estilos en todos los documentos
+                    de nuestro sitio web. La solución es mover todos los estilos a un archivo externo y luego utilizar
+                    el elemento <span class="badge badge-info">&lt;link&gt;</span>. Para insertar este archivo dentro de
+                    cada documento que los necesite. Este método nos permite
+                    cambiar los estilos por completo simplemente incluyendo un archivo diferente.
+                </p>
+                <figure class="figure">
+                    <img src="../imgs/archivos-externos.png" class="figure-img img-fluid rounded" alt="ejemplo">
+                    <figcaption class="figure-caption">Este es un ejemplo de uso de archivos externos.</figcaption>
+                </figure>
+            </div>
+        </div>
+
+    </main>
+
+    <div class="row">
+        <div class="col text-center">
+            <a class="btn btn-lg btn-outline-info" href="../2/aplicando_estilos.html">
+                Ir a la siguiente sección >>
+            </a>
+        </div>
+    </div>
+
+    <script src="../../footer.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,11 @@
+div > span.texto-rojo {
+  color: red;
+}
+
+span.texto-rojo + span {
+  color: blue;
+}
+
+span.texto-rojo ~ p {
+  color: darkgreen;
+}

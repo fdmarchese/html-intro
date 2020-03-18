@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Federico Marchese" />
+
+    <link rel="shortcut icon" href="../../resources/favicon.ico" />
+
+    <title>Formulario Básico</title>
+
+    <style>
+        input:valid {
+            border: 1px solid #000;
+            color: #000;
+        }
+
+        input:invalid {
+            border: 2px solid red;
+            color: red;
+        }
+    </style>
+    <link rel="stylesheet" href="../../resources/css/bootstrap.min.css" />
+</head>
+
+<body>
+    <main class="container mt-3">
+        <div class="row">
+            <div class="col-6 offset-3">
+                <header>
+                    <h2>
+                        Ejemplo de un formulario básico
+                    </h2>
+                    <small class="text-muted">
+                        Validaciones aplicadas por htlm5 y patrones de expresiones regulares
+                    </small>
+                </header>
+
+                <form id="formulario" method="GET">
+                    <div class="form-group">
+                        <label for="Nombre">Nombre</label>
+                        <input type="text" class="form-control" id="Nombre" name="Nombre"
+                            placeholder="Ingrese su nombre" required pattern="[a-zA-Z]*" />
+                    </div>
+                    <div class="form-group">
+                        <label for="Apellido">Apellido</label>
+                        <input type="text" class="form-control" id="Apellido" name="Apellido"
+                            placeholder="Ingrese su apellido" required pattern="[a-zA-Z]*" />
+                    </div>
+                    <div class="form-group">
+                        <label for="Apellido">DNI</label>
+                        <input type="text" class="form-control" id="DNI" name="DNI" placeholder="Ingrese su dni"
+                            required />
+                    </div>
+                    <div class="form-group">
+                        <label for="Email">Email</label>
+                        <input type="email" class="form-control" id="Email" name="Email" aria-describedby="AyudaEmail"
+                            placeholder="Ingrese su email" required />
+                        <small id="AyudaEmail" class="form-text text-muted">No compartiremos la dirección con
+                            nadie.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="Password">Contraseña</label>
+                        <input type="password" class="form-control" id="Password" name="Password" required
+                            placeholder="Ingrese su contraseñas" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                            title="Debe ser de al menos 8 caracteres y contener al menos un número, una mayúscula y una minúscula" />
+                    </div>
+
+                    <fieldset class="form-group">
+                        <div class="row">
+                            <legend class="col-form-label col-sm-2 pt-0">Sexo</legend>
+                            <div class="col-sm-10">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="Sexo" id="Sexo_Femenino"
+                                        value="Femenino" required />
+                                    <label class="form-check-label" for="Sexo_Femenino">Femenino</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="Sexo" id="Sexo_Masculino"
+                                        value="Masculino" required />
+                                    <label class="form-check-label" for="Sexo_Masculino">Masculino</label>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <div class="form-group">
+                        <label for="FechaNacimiento">Fecha de nacimiento</label>
+                        <input type="date" class="form-control" id="FechaNacimiento" name="FechaNacimiento" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="AntiguedadLaboral">Antigüedad de trabajo en años</label>
+                        <input type="number" class="form-control" id="AntiguedadLaboral" name="AntiguedadLaboral"
+                            placeholder="Ingrese su antigüedad laboral en años" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Biografia">Biografía</label>
+                        <textarea class="form-control" style="min-height: 100px;" id="Biografia" name="Biografia"></textarea>
+                    </div>
+
+                    <fieldset class="form-group">
+                        <div class="row">
+                            <legend class="col-form-label col-sm-2 pt-0">Sexo</legend>
+                            <div class="col-sm-10">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" name="Idioma_es" id="Idioma_es"
+                                        value="es" />
+                                    <label class="form-check-label" for="Idioma_es">Español</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" name="Idioma_en" id="Idioma_en"
+                                        value="en" />
+                                    <label class="form-check-label" for="Idioma_en">Inglés</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" name="Idioma_pt" id="Idioma_pt"
+                                        value="pt" />
+                                    <label class="form-check-label" for="Idioma_pt">Portugués</label>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <hr />
+
+                    <button type="submit" class="btn btn-primary">
+                        Enviar
+                    </button>
+                    <button type="reset" class="btn btn-secondary">
+                        Restablecer
+                    </button>
+                </form>
+            </div>
+        </div>
+
+    </main>
+</body>
+
+</html>

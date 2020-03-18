@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Federico Marchese" />
+
+    <link rel="shortcut icon" href="../../resources/favicon.ico" />
+
+    <title>Elementos H</title>
+
+    <link rel="stylesheet" href="../../resources/css/bootstrap.min.css" />
+</head>
+
+<body>
+    <script src="../../navbar.js"></script>
+
+    <main class="container mt-3">
+
+        <h1>Elementos H</h1>
+
+        <div class="alert alert-info">
+            Dentro de cada elemento &lt;header&gt; incorporamos elementos &lt;h1&gt; para declarar un título.
+            Básicamente, las etiquetas &lt;h1&gt; son todo lo que necesitamos para crear una línea de cabecera para cada
+            parte del documento, pero es normal que necesitemos también agregar subtítulos o más información que
+            especifique de qué se trata la página web o una sección en particular. De hecho, el elemento &lt;header&gt;
+            fue creado para contener también otros elementos como tablas de contenido, formularios de búsqueda o textos
+            cortos y logos. Para construir este tipo de cabeceras, podemos aprovechar el resto de las etiquetas
+            <span class="badge badge-info">H</span>, como &lt;h1&gt;, &lt;h2&gt;, &lt;h3&gt;, &lt;h4&gt;, &lt;h5&gt; y
+            &lt;h6&gt;, pero siempre considerando que por propósitos de procesamiento interno, y para evitar generar
+            múltiples secciones durante la interpretación del documento por parte del navegador, estas etiquetas deben
+            estar juntas.
+        </div>
+
+        <hr />
+
+        <div class="row">
+            <div class="col">
+                <header>
+                    <h2>El elemento Header</h2>
+                </header>
+                <p>
+                    El elemento de HTML Header (&lt;header&gt;) representa un grupo de ayudas introductorias o de
+                    navegación. Puede contener algunos elementos de encabezado, así como también un logo, un formulario
+                    de búsqueda, un nombre de autor y otros componentes.
+                    <br />
+                    No se trata de un elemento de sección, por lo tanto no introduce una nueva sección en el outline del
+                    documento.
+                    <br />
+                    La intención del uso del elemento &lt;header&gt; está apuntando a funcionar de englobador de
+                    cabeceras (elementos h1-h6), pero no se trata de un elemento requerido (puede no utilizarse y lograr
+                    el mismo propósito).
+                    <br />
+                    Aunque recién fue formalizado en las especificaciones de HTML5, el elemento Header existía en los
+                    orígenes de HTML. Originalmente se usaba como el elemento Head y en cierto punto se decidió utilizar
+                    un nombre diferente, lo que facilitó luego especificar un comportamiento más específico.
+                </p>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+            <div class="col">
+                <header>
+                    <h2>Algunos ejemplos comunes</h2>
+                </header>
+                <p>
+                    Elemento header utilizado como cabecera de una página:
+                    <br />
+                    <img src="../imgs/html-header-pagina.PNG" class="img-thumbnail" style="height: 75px;">
+                </p>
+                <p>
+                    Elemento header utilizado como cabecera de un artículo:
+                    <br />
+                    <img src="../imgs/html-header-articulo.PNG" class="img-thumbnail" style="height: 150px;">
+                </p>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="card bg-light mb-3">
+            <div class="card-header">
+                Ejemplo
+            </div>
+            <div class="card-body">
+
+                <section>
+                    <article>
+                        <header>
+                            <h1>Título Principal</h1>
+                            <h2>Tíulo Secundario</h2>
+                            <small>contenido dentro del header que no es un tag H</small>
+                        </header>
+                        <p class="text-danger">
+                            Contenido fuera del header
+                        </p>
+                    </article>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <div class="row">
+        <div class="col text-center">
+          <a class="btn btn-lg btn-outline-info" href="../6/elemento-input-y-sus-atributos.html">
+            Ir a la siguiente sección >>
+          </a>
+        </div>
+      </div>
+
+    <script src="../../footer.js"></script>
+</body>
+
+</html>

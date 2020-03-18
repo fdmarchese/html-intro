@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Federico Marchese" />
+
+    <link rel="shortcut icon" href="../../resources/favicon.ico" />
+
+    <title>Aplicando estilos al documento</title>
+
+    <link rel="stylesheet" href="../../resources/css/bootstrap.min.css" />
+</head>
+
+<body>
+    <script src="../../navbar.js"></script>
+
+    <main class="container mt-3">
+
+        <h1>Aplicando estilos al documento</h1>
+        <div class="row mt-3">
+            <div class="col">
+                <div class="alert alert-info">
+                    Cuando hablamos de aplicar los estilos a un documento necesitamos de buenos mecanismos que nos
+                    ayuden a establecer una específica relación entre estos estilos y los elementos del documento que
+                    van a ser afectados.
+                    Existen varios métodos para seleccionar cuáles elementos HTML serán afectados por las reglas CSS que
+                    veremos a continuación
+                </div>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+            <div class="col-8">
+                <h2>Referenciando con palabra clave</h2>
+                <p>
+                    Al declarar las reglas CSS utilizando la palabra clave del elemento afectamos cada elemento de la
+                    misma clase en el documento. Por ejemplo, la siguiente regla cambiará los estilos de todos los
+                    elementos <span class="badge badge-info">&lt;p&gt;</span>.
+                    Utilizando la palabra clave p al frente de la regla le estamos diciendo al navegador que esta regla
+                    debe ser aplicada a cada elemento
+                    &lt;p&gt; encontrado en el documento HTML.
+                </p>
+            </div>
+            <div class="col-4">
+                <div class="card text-white badge-info mb-3" style="max-width: 18rem;">
+                    <div class="card-header">Código css</div>
+                    <div class="card-body">
+                        <p class="card-text">
+                            p {<br> &emsp;font-size: 20px;<br>}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+            <div class="col-8">
+                <h2>Referenciando con el atributo id</h2>
+                <p>
+                    El atributo id es como un nombre que identifica al elemento. Esto significa que el valor de este
+                    atributo no puede ser duplicado. Este nombre debe ser único en todo el documento. Para referenciar
+                    un elemento en particular usando el atributo <span class="badge badge-info">id</span> desde nuestro
+                    archivo CSS la regla debe ser
+                    declarada con el símbolo <span class="badge badge-info">#</span> al frente del valor que usamos para
+                    identificar el elemento
+                </p>
+            </div>
+            <div class="col-4">
+                <div class="card text-white badge-info mb-3" style="max-width: 18rem;">
+                    <div class="card-header">Código css</div>
+                    <div class="card-body">
+                        <p class="card-text">
+                            #texto1 {<br> &emsp;font-size: 20px;<br>}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+            <div class="col-8">
+                <h2>Referenciando con el atributo class</h2>
+                <p>
+                    La mayoría del tiempo, en lugar de utilizar el atributo id para propósitos de estilos es mejor
+                    utilizar <span class="badge badge-info">class</span>. Este atributo es más flexible y puede ser
+                    asignado a cada elemento HTML en el documento que comparte un diseño similar
+                </p>
+                Ejemplo:
+                <br>
+                <figure class="figure">
+                    <img src="../imgs/css-class.png" class="figure-img img-fluid rounded" alt="ejemplo">
+                    <figcaption class="figure-caption">Uso de css class dentro del documento html.</figcaption>
+                </figure>
+            </div>
+            <div class="col-4">
+                <div class="card text-white badge-info mb-3" style="max-width: 18rem;">
+                    <div class="card-header">Código css</div>
+                    <div class="card-body">
+                        <p class="card-text">
+                            .texto1 {<br> &emsp;font-size: 20px;<br>}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+            <div class="col-8">
+                <h2>Referencia con el atributo class sólo para determinado tipo de elemento</h2>
+                <p>
+                    La razón por la que debemos utilizar un punto delante del nombre de la regla es que es posible
+                    construir referencias más complejas. Por ejemplo, se puede utilizar el mismo valor para el atributo
+                    class en diferentes elementos pero asignar diferentes estilos para cada tipo.
+                    El siguiente ejemplo ilustra una regla que sólo aplica a los elementos de tipo p que utilicen el
+                    attributo class texto1
+                </p>
+            </div>
+            <div class="col-4">
+                <div class="card text-white badge-info mb-3" style="max-width: 18rem;">
+                    <div class="card-header">Código css</div>
+                    <div class="card-body">
+                        <p class="card-text">
+                            p.texto1 {<br> &emsp;font-size: 20px;<br>}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+            <div class="col-8">
+                <h2>Referenciando con cualquier atributo</h2>
+                <p>
+                    Uno de las formas de referenciar elementos HTML es el Selector de Atributo.
+                    Ahora podemos referenciar un elemento no solo por los atributos id y class sino también a través de
+                    cualquier otro atributo
+                </p>
+            </div>
+            <div class="col-4">
+                <div class="card text-white badge-info mb-3" style="max-width: 18rem;">
+                    <div class="card-header">Aplicar estilo si poseen el atributo name</div>
+                    <div class="card-body">
+                        <p class="card-text">
+                            p[name] {<br> &emsp;font-size: 20px;<br>}
+                        </p>
+                    </div>
+                </div>
+                <div class="card text-white badge-info mb-3" style="max-width: 18rem;">
+                    <div class="card-header">Aplicar estilo si poseen name con el valor miNombre</div>
+                    <div class="card-body">
+                        <p class="card-text">
+                            p[name="miNombre"] {<br> &emsp;font-size: 20px;<br>}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+            <div class="col">
+                <h2>Referenciado en atributos con expresiones regulares</h2>
+                <p>
+                    Si se conocen las Expresiones Regulares desde otros lenguajes como Javascript o PHP, se podrá
+                    reconocer los selectores. En CSS3 estos selectores producen similares resultados
+                </p>
+                <ul>
+                    <li>La regla con el selector <span class="badge badge-warning">^=</span> será asignada a todo
+                        elemento
+                        <code>&lt;p&gt;</code> que contiene un atributo name con un valor comenzado en "mi" (por
+                        ejemplo, "mitexto", "micasa").</li>
+                    <li>La regla con el selector <span class="badge badge-warning">$=</span> será asignada a todo
+                        elemento
+                        <code>&lt;p&gt;</code> que contiene un atributo name con un valor finalizado en "mi" (por
+                        ejemplo, "mitexto", "micasa").</li>
+                    <li>La regla con el selector <span class="badge badge-warning">*=</span> será asignada a todo
+                        elemento
+                        <code>&lt;p&gt;</code> que contiene un atributo name con un valor que incluye el texto "mi" (en
+                        este caso, el texto podría también encontrarse en el medio, como en "textomicasa").</li>
+                </ul>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+            <div class="col">
+                <h2>Aplicando más de una clase a un elemento</h2>
+                <p>
+                    Si a un elemento le quiero aplicar los estilos de más de una clase al mismo tiempo se puede hacer
+                    perfectamente concatenando las clases seaparadas entre sí por un espacio. Esto aplicará los estilos
+                    combinados de todas las clases que se apliquen sobre el elemento.
+                </p>
+                <p>
+                    Suponiendo que tenemos las siguientes clases:
+                    <ul>
+                        <li>fuentes-normales {<br> &emsp;font-size: 20px;<br>}</li>
+                        <li>texto-rojo {<br> &emsp;color: red;<br>}</li>
+                        <li>negrita {<br> &emsp;font-weight: bold;<br>}</li>
+                    </ul>
+
+                    Si queremos aplicarlas a un elemento div todas a la vez sería de la siguiente forma:
+                    <br />
+                    <code>&lt;div class="fuentes-normales texto-rojo negrita" &gt;&lt;/div&gt;</code>
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <div class="row">
+        <div class="col text-center">
+            <a class="btn btn-lg btn-outline-info" href="../3/pseudo-clases.html">
+                Ir a la siguiente sección >>
+            </a>
+        </div>
+    </div>
+
+    <script src="../../footer.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Federico Marchese" />
+
+    <link rel="shortcut icon" href="../../resources/favicon.ico" />
+
+    <title>Atributo Display</title>
+
+    <link rel="stylesheet" href="../../resources/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="atributo-display.css" />
+</head>
+
+<body>
+    <script src="../../navbar.js"></script>
+
+    <main class="container mt-3">
+
+        <h1>Selectores CSS</h1>
+        <div class="row mt-3">
+            <div class="col">
+                <div class="alert alert-info">
+                    La propiedad CSS display especifica el tipo de cuadro de representación utilizado para un elemento.
+                    En HTML, los valores de propiedad predeterminados display se toman de los comportamientos de los
+                    cambios en las especificaciones HTML o de la hoja de estilo predeterminada del navegador / usuario.
+                </div>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+            <div class="offset-2 col-8">
+                <h2>Propiedades de display : none</h2>
+                <p>
+                    Existen varias categorías de display las cuales determinarán cómo se visualiza un determinado
+                    elemento. Además de los diferentes tipos de visualizacion, el valor de <span
+                        class="badge badge-dark">none</span> permite desactivar la visualizacion de un elemento (no será
+                    renderizado en el navegador). Cuando se utilice el valor <span class="badge badge-dark">none</span>,
+                    todos los elementos que se encuentren definidos dentro del elemento que posea display en none
+                    tampoco serán renderizados. El documento se procesa como si el elemento no existiera en el árbol de
+                    documentos, sin embargo si realizamos una inspección del html que se envía al cliente los elementos
+                    con display none están presentes en el código.
+                </p>
+
+                Ejemplo: <code>&lt;div class="no-mostrar"&gt;&lt;/div&gt;</code>
+                <div>
+                    <span class="texto-rojo">
+                        En este caso, el div de arriba no será renderizado en el navegador del cliente ya que si miramos
+                        la clase no-mostrar especificada en el archivo <code>atributo-display.css</code> se puede
+                        observar que aplica <span class="badge badge-warning">display: none;</span>.
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+            <div class="offset-2 col-8">
+                <h2>Propiedades de display: block / inline</h2>
+                <p>
+                    Dos de los valores más comunes utilizadas para la propiedad block son block e inline.
+                    <br />
+                    El valor block hace que el elemento se renderice como un cuadro de elemento de bloque.
+                    <br />
+                    El valor inline hacer que el elemento se renderice como uno o más cuadros de elemento en línea,
+                    dicho de otro modo, se posicionará en línea con otros elementos del mismo nivel que utilicen la
+                    propiedad display como inline.
+                </p>
+
+                <hr />
+
+                Ejemplo: <code>block</code>
+                <div class="row">
+                    <div class="col-6">
+                        <p>
+                            a continuación 4 elementos con display block:
+                        </p>
+                        <div class="en-bloque">
+                            elemento en bloque
+                        </div>
+                        <span class="en-bloque">
+                            elemento en bloque
+                        </span>
+                        <span class="en-bloque">
+                            elemento en bloque
+                        </span>
+                        <button class="en-bloque">
+                            elemento en bloque
+                        </button>
+                        <button class="en-bloque">
+                            elemento en bloque
+                        </button>
+                    </div>
+                    <div class="col-6">
+                        <img src="../imgs/elementos-en-bloque.PNG" width="160px" />
+                    </div>
+                </div>
+
+                <hr />
+
+                Ejemplo: <code>inline</code>
+                <div class="row">
+                    <div class="col-6">
+                        <p>
+                            a continuación 4 elementos con display inline:
+                        </p>
+                        <div class="en-linea">
+                            elemento en línea
+                        </div>
+                        <span class="en-linea">
+                            elemento en línea
+                        </span>
+                        <span class="en-linea">
+                            elemento en línea
+                        </span>
+                        <button class="en-linea">
+                            elemento en línea
+                        </button>
+                        <button class="en-linea">
+                            elemento en línea
+                        </button>
+                    </div>
+                    <div class="col-6">
+                        <img src="../imgs/elementos-en-linea.PNG" width="160px" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="alert alert-warning">
+            Para más información acerca de la propiedad display y cómo utilizarla con sus distintos posibles valores ver
+            los siguientes links:
+            <ul>
+                <li><a
+                        href="https://developer.mozilla.org/es/docs/Web/CSS/display">https://developer.mozilla.org/es/docs/Web/CSS/display</a>
+                </li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout"></a>Uso de
+                    FlexBox</li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/flex">display: flex</a></li>
+                <li><a href="https://www.w3schools.com/cssref/pr_class_display.asp">material de w3schools</a></li>
+            </ul>
+        </div>
+    </main>
+
+    <div class="row">
+        <div class="col text-center">
+            <a class="btn btn-lg btn-outline-info" href="../../3-js/index.html">
+                Ir a la siguiente sección >>
+            </a>
+        </div>
+    </div>
+
+    <script src="../../footer.js"></script>
+</body>
+
+</html>

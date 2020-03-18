@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset=utf-8 />
+
+    <title>js ejercicio 6</title>
+
+    <link rel="stylesheet" href="../../resources/css/bootstrap.min.css" />
+</head>
+
+<body>
+    <div class="alert alert-info">
+        Hacer que se pueda depositar dinero y extraer dinero.
+        <br />
+        La operación de extracción debe dejar un asiento en la columna monto que indique el monto en negativo y con
+        color rojo (puede utilizar la clase de bootstrap text-danger).
+        <br />
+        La operación de depósito debe dejar un asiento en la columna monto que indique el monto positivo y con
+        color verde (puede utilizar la clase de bootstrap text-success).
+        <br />
+        En cualquiera de los casos anteriores debe actualizar el balance total y el banlance parcial indicando el monto 
+        disponible en la Cta. Cte.
+    </div>
+
+    <main class="container">
+        <header>
+            <h1>Mi cuenta corriente</h1>
+        </header>
+        <div class="alert alert-warning">
+            Balance Total: <span>$55,00</span>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>Fecha de movimiento</th>
+                        <th>Monto</th>
+                        <th>Balance parcial</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>10/01/2020</td>
+                        <td class="text-success">$100,00</td>
+                        <td>$100,00</td>
+                    </tr>
+                    <tr>
+                        <td>22/01/2020</td>
+                        <td class="text-danger">$-45,00</td>
+                        <td>$55,00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+</body>
+
+</html>

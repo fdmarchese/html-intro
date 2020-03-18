@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Federico Marchese" />
+
+    <link rel="shortcut icon" href="../../resources/favicon.ico" />
+
+    <title>Selectores en Javascript</title>
+
+    <link rel="stylesheet" href="../../resources/css/bootstrap.min.css" />
+</head>
+
+<body>
+    <script src="../../navbar.js"></script>
+
+    <main class="container mt-3">
+        <div class="row">
+            <div class="col">
+                <h1 class="text-center">Introducción a Javascript</h1>
+                <div class="alert alert-info">
+                    El uso de <span class="badge badge-info">«selectores»</span> en JavaScript permite encontrar y
+                    seleccionar elementos del DOM bien sea para extraer información de cada nodo o para manipularlos de
+                    ser necesario.
+                    <br />
+                    Estos selectores funcionan de forma muy similar a los selectores que se usan en CSS vistos
+                    anteriormente.
+                    <br />
+                    Los selectores son utilizados para obtener los elementos que coincidan con el criterio de búsqueda
+                    establecido, ahora bien dicho criterio puede aplicar en ciertos casos a más de un elemento del DOM.
+                    En dichos casos el selector aplicado retornará los resultados obtenidos en el DOM.
+                </div>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+            <div class="col">
+                <header>
+                    <h2 id="cabeceraIdSelector">Selector por identidad (valor del atributo id de un elemento)</h2>
+                    <small class="text-muted">ver archivo "selectores-identidad.js"</small>
+                </header>
+                <p class="mt-3">
+                    para realizar una selección por identidad, simplemente se debe realizar un selector utilizando
+                    "#VALOR_DEL_ID_DEL_ELEMENTO".
+                    <br />
+                    Por ejemplo, si tenemos un elemento así:
+                    <br />
+                    <code>&lt;input type="text" id="unCampoDeTexto" /&gt;</code>
+                    <br />
+                    El selector por identidad para acceder a dicho elemento sería:
+                    <br />
+                    <code>"#unCampoDeTexto"</code>
+                    <br />
+                    <br />
+                    En javascript se puede utilizar la funci&oacute;n <span
+                        class="badge badge-info">document.getElementById('unCampoDeTexto');</span>
+                    para obtener la referencia al objeto que tiene el id con el valor pasado como par&aacute;metro.
+                </p>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+            <div class="col">
+                <header>
+                    <h2 class="cabeceraClaseSelector">Selector por clase (valor del atributo class de un elemento)</h2>
+                    <small class="text-muted">ver archivo "selectores-clase.js"</small>
+                </header>
+                <p class="mt-3">
+                    para realizar una selección por clase, se debe realizar un selector utilizando
+                    ".VALOR_DE_UNA_CLASE_UTILIZADA_EN_EL_ELEMENTO".
+                    <br />
+                    Por ejemplo, si tenemos un elemento así:
+                    <br />
+                    <code>&lt;input type="text" class="unaClase otraClase" /&gt;</code>
+                    <br />
+                    El selector por clase para acceder a dicho elemento sería:
+                    <br />
+                    <code>".unaClase"</code> o <code>".otraClase"</code>
+                    <br />
+                    <br />
+                    En javascript se puede utilizar la funci&oacute;n <span
+                        class="badge badge-info">document.getElementsByClassName('unaClase');</span>
+                    para obtener la referencia a los objetos que utilizan la clase pasada como par&aacute;metro.
+                </p>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+            <div class="col">
+                <header>
+                    <h2>Selector por tag (tipo de elemento HTML => tag)</h2>
+                    <small class="text-muted">ver archivo "selectores-tag.js"</small>
+                </header>
+                <p class="mt-3">
+                    para realizar una selección por tag, se debe realizar un selector utilizando
+                    "NOMBRE_DEL_TAG_A_BUSCAR".
+                    <br />
+                    Por ejemplo, si tenemos un elemento así:
+                    <br />
+                    <code>&lt;p /&gt;</code>
+                    <br />
+                    El selector por tag para acceder a dicho elemento sería:
+                    <br />
+                    <code>"p"</code>
+                    <br />
+                    <br />
+                    En javascript se puede utilizar la funci&oacute; <span
+                        class="badge badge-info">document.getElementsByTagName('p');</span>
+                    para obtener la referencia a los objetos que son del tag pasado por par&aacute;metro.
+                </p>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+            <div class="col">
+                <header>
+                    <h2>Selector por atributo</h2>
+                    <small class="text-muted">ver archivo "selectores-atributo.js"</small>
+                </header>
+                <p class="mt-3">
+                    para realizar una selección por atributo, se debe realizar un selector utilizando
+                    "[NOMBRE_ATRIBUTO=”VALOR_ATRIBUTO”]".
+                    <br />
+                    Por ejemplo, si tenemos los siguientes elementos:
+                    <br />
+                    <code>&lt;a href="https://www.google.com" class="case1 clase2 clase3" hreflang="en"&gt;Primer link&lt;/a&gt;</code>
+                    <br />
+                    <code>&lt;a href="https://www.google.com.uk" class="case1" hreflang="en-UK"&gt;Segundo link&lt;/a&gt;</code>
+                    <br />
+                    <code>&lt;a href="google.com" class="clase2" target="_blank" hreflang="english"&gt;Tercer link&lt;/a&gt;</code>
+                    <br />
+                    El selector por atributo para acceder a dicho elemento (el primero) sería:
+                    <br />
+                    <code>"[href="https://www.google.com"]"</code>
+                    <br />
+                    Adicionalmente existen otros comparadores. Para mayor detalle ver el script
+                    "selectores-atributo.js".
+                    <br />
+                    <br />
+                    En javascript se puede utilizar la funci&oacute; <span
+                        class="badge badge-info">document.querySelector('[href="https://www.google.com"]');</span>
+                    para obtener la referencia al objeto que cumple con el selector pasado por par&aacute;metro.
+                    <br />
+                    Si lo que se busca es obtener todos los elementos que cumplen una condici&oacute;n de
+                    selecci&oacute;n entonces se puede utilizar la funci&oacute; <span
+                        class="badge badge-info">document.querySelectorAll('.clase1');</span> para obtener la referencia
+                    a los objetos que utilizan la clase pasada como par&aacute;metro.
+                </p>
+            </div>
+        </div>
+
+        <div class="clase1" style="display: none;">
+            <a href="https://www.google.com" class="case1 clase2 clase3" hreflang="en">Primer link</a>
+            <a href="https://www.google.com.uk" class="case1" hreflang="en-UK">Segundo link</a>
+            <a href="google.com" class="clase2" target="_blank" hreflang="english">Tercer link</a>
+        </div>
+
+        <hr />
+
+        <div class="row">
+            <div class="col">
+                <header>
+                    <h2>Selector combinados</h2>
+                    <small class="text-muted">ver archivo "selectores-combinados.js"</small>
+                </header>
+                <p class="mt-3">
+                    Para realizar una selección combinada simplemente hacemos un selector que se combine con otros
+                    selectores de una manera específica.
+                    <br />
+                    Cuando se quiere buscar con más de un criterio, los criterios de búsqueda son separados por coma
+                    <span class="badge badge-info">,</span>.
+                    <br />
+                    Por ejemplo, si tenemos un elemento así:
+                    <br />
+                    <code>&lt;div&gt;&lt;/div&gt;</code>
+                    <br />
+                    <code>&lt;div class="clase1"&gt;&lt;/div&gt;</code>
+                    <br />
+                    <code>&lt;div class="clase1"&gt;&lt;/div&gt;</code>
+                    <br />
+                    <code>&lt;div class="clase2"&gt;&lt;/div&gt;</code>
+                    <br />
+                    Un selector combinado que nos retorne esos elementos sería:
+                    <br />
+                    <code>"div.clase1, div.clase2"</code>
+                    <br />
+                    En este caso nos retornará el segundo, tercer y cuarto div del ejemplo.
+                </p>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="alert alert-warning">
+            Para mayor detalle sobre selectores ver los siguientes links
+            <ul>
+                <li><a target="_blank" href="https://www.w3.org/TR/selectors-api/">Selectors API</a></li>
+                <li><a target="_blank" href="https://developer.mozilla.org/es/docs/Web/API/Document/querySelector">MDN
+                        document.querySelector()</a></li>
+                <li><a target="_blank"
+                        href="https://developer.mozilla.org/es/docs/Web/API/Document/querySelectorAll">MDN
+                        document.querySelectorAll()</a></li>
+                <li><a target="_blank"
+                        href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors">CSS
+                        Selectors
+                        (los selectores utilizados en querySelector() y querySelectorAll())</a></li>
+            </ul>
+        </div>
+    </main>
+
+    <div class="row">
+        <div class="col text-center">
+            <a class="btn btn-lg btn-outline-info" href="../3/manipulando-estilos.html">
+                Ir a la siguiente sección >>
+            </a>
+        </div>
+    </div>
+
+    <script src="../../footer.js"></script>
+
+    <script src="../../resources/js/jquery-3.4.1.min.js"></script>
+
+    <script type="text/javascript" src="selectores-identidad.js"></script>
+    <script type="text/javascript" src="selectores-clase.js"></script>
+    <script type="text/javascript" src="selectores-tag.js"></script>
+    <script type="text/javascript" src="selectores-atributo.js"></script>
+    <script type="text/javascript" src="selectores-combinados.js"></script>
+</body>
+
+</html>

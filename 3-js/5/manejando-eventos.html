@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Federico Marchese" />
+
+    <link rel="shortcut icon" href="../../resources/favicon.ico" />
+
+    <title>Manejando eventos</title>
+
+    <link rel="stylesheet" href="../../resources/css/bootstrap.min.css" />
+</head>
+
+<body>
+    <script src="../../navbar.js"></script>
+
+    <main class="container mt-3">
+        <div class="row">
+            <div class="col">
+                <h1 class="text-center">Manejando eventos</h1>
+                <div class="alert alert-info">
+                    JavaScript nos permite acceder a los distintos elementos del DOM (domain object model) y
+                    manipularlos según sea necesario.
+                    <br />
+                    Una de las grandes utilidades que podemos aprovechar con javascript es el manejo de los distintos
+                    eventos que suceden a los distintos elementos presentes en el dom.
+                </div>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+            <div class="col-8">
+                <header>
+                    <h2>Formas de manejar los eventos</h2>
+                    <small class="text-muted">ver archivo "manejando-eventos.js"</small>
+                </header>
+                <p class="mt-3">
+                    Existen dos formas b&aacute;sicas de manejar eventos que sucedan a los elementos del dom.
+                    <ul>
+                        <li>
+                            <span class="badge badge-info">asignando las funciones en el c&oacute;digo html</span>
+                            <br />
+                            Se puede asignar directamente en la definici&oacute;n del elemento html utilizando el nombre
+                            del evento y asignando la funci&oacute; que har&aacute; el manejo de dicho evento.
+                            <br />
+                            El input debajo del texto "manejo de focus" tiene un manejo del evento que ocurre al hacer
+                            foco dentro de dicho input. Cuando sucede el focus llamamos a la función manejadora <span
+                                class="badge badge-info">focoEnElInput(elemento);</span> definida
+                            en el archivo <code>manejando-eventos.js</code>. Si se mira en detalle a esta
+                            función, recibe por par&aacute;metro el propio elemento del dom que lo invoca y le aplica un
+                            estilo en especial.
+                            <br />
+                            El input debajo del texto "manejo de focus" tiene un manejo del evento que ocurre al perder
+                            el foco dentro de dicho input. Cuando sucede el blur llamamos a la función manejadora <span
+                                class="badge badge-info">fueraFocoDelInput(elemento);</span> definida
+                            en el archivo <code>manejando-eventos.js</code>. Si se mira en detalle a esta
+                            función, recibe por par&aacute;metro el propio elemento del dom que lo invoca y le aplica un
+                            estilo en especial.
+                        </li>
+                        <li>
+                            <span class="badge badge-info">innerHtml</span>
+                            <br />
+                            Con el botón "Usar innerHTML" llamamos a la función <span
+                                class="badge badge-info">agregarInnerHTML(idElemento, html);</span> definida
+                            en el archivo <code>agregando-elementos-al-dom.js</code>. Si se mira en detalle a esta
+                            función, lo que hace es acceder al elemento con id "divInnerHtml" y asigna un nuevo valor a
+                            la propiedad innerHTML del elemento. Esto hará que dentro del div se adicione el contenido
+                            asignado como html dentro del elemento.
+                            <br />
+                            El tercer botón que tenemos "Usar innerText para agregar html" expone que si se trata de
+                            asignar html a través la propiedad innerText, éste no se comportará como html, sino como
+                            texto.
+                        </li>
+                    </ul>
+                </p>
+            </div>
+            <div class="col-4">
+                <label class="label">manejo de focus</label>
+                <input type="text" class="form-control" onfocus="focoEnElInput(this);"
+                    onblur="fueraFocoDelInput(this);" />
+
+                <hr />
+
+                <img src="../imgs/eventos-en-html.PNG" width="100%" />
+
+                <hr />
+
+                <label class="label">manejo de mouse over</label>
+                <button id="botonConEventos" class="btn btn-dark">
+                    manejo de mouse over
+                </button>
+
+                <hr />
+
+                <img src="../imgs/eventos-en-js.PNG" width="100%" />
+                <br />
+                <br />
+                <img src="../imgs/asignando-manejadores-de-eventos-en-js.PNG" width="100%" />
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+            <div class="col">
+                <header>
+                    <h2>Eventos de los elementos del DOM</h2>
+                </header>
+                <p class="mt-3">
+                    Existen muchos eventos que se disparan en determinados momentos para los elementos del DOM. Estos
+                    eventos pueden ser manejados por nuestro c&oacute;digo si les agregamos un manejador de evento al
+                    elemento en cuesti&oacute;n. A continuaci&oacute;n tenemos una lista de algunos de lo eventos que se
+                    dispar&aacute;n y podemos manejar para los distintos elementos del DOM.
+                    <ul>
+                        <li>
+                            <span class="badge badge-dark">onblur - (al quitar el foco)</span>
+                            <br />
+                            Devuelve el código de manejo de evento para el evento blur.
+                        </li>
+                        <li>
+                            <span class="badge badge-dark">onchange - (al modificar)</span>
+                            <br />
+                            Devuelve el código de manejo de evento para el evento change.
+                        </li>
+                        <li>
+                            <span class="badge badge-dark">onclick - (al hacer clic)</span>
+                            <br />
+                            Devuelve el código de manejo de evento para el evento onclick.
+                        </li>
+                        <li>
+                            <span class="badge badge-dark">ondblclick - (al hacer doble clic)</span>
+                            <br />
+                            Devuelve el código de manejo de evento para el evento ondblclick.
+                        </li>
+                        <li>
+                            <span class="badge badge-dark">onfocus - (al poner el foco)</span>
+                            <br />
+                            Devuelve el código de manejo de evento para el evento onfocus.
+                        </li>
+                        <li>
+                            <span class="badge badge-dark">onkeydown - (al tener una tecla apretada)</span>
+                            <br />
+                            Devuelve el código de manejo de evento para el evento onkeydown.
+                        </li>
+                        <li>
+                            <span class="badge badge-dark">onkeypress - (al apretar una tecla)</span>
+                            <br />
+                            Devuelve el código de manejo de evento para el evento onkeypress.
+                        </li>
+                        <li>
+                            <span class="badge badge-dark">onkeyup - (al soltar una tecla)</span>
+                            <br />
+                            Devuelve el código de manejo de evento para el evento onkeyup.
+                        </li>
+                        <li>
+                            <span class="badge badge-dark">onmousedown - (al tener el botón del ratón apretado)</span>
+                            <br />
+                            Devuelve el código de manejo de evento para el evento onmousedown.
+                        </li>
+                        <li>
+                            <span class="badge badge-dark">onmousemove - (al mover el ratón)</span>
+                            <br />
+                            Devuelve el código de manejo de evento para el evento onmousemove.
+                        </li>
+                        <li>
+                            <span class="badge badge-dark">onmouseout - (al quitar el puntero del ratón)</span>
+                            <br />
+                            Devuelve el código de manejo de evento para el evento onmouseout.
+                        </li>
+                        <li>
+                            <span class="badge badge-dark">onmouseover - (al pasar el ratón encima)</span>
+                            <br />
+                            Devuelve el código de manejo de evento para el evento onmouseover.
+                        </li>
+                        <li>
+                            <span class="badge badge-dark">onmouseup - (al soltar el botón del ratón)</span>
+                            <br />
+                            Devuelve el código de manejo de evento para el evento onmouseup.
+                        </li>
+                        <li>
+                            <span class="badge badge-dark">onresize - (al re-dimensionar la pantalla)</span>
+                            <br />
+                            Devuelve el código de manejo de evento para el evento onresize.
+                        </li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+            <div class="col">
+                <header>
+                    <h2>Atributos de los eventos</h2>
+                </header>
+                <p class="mt-3">
+                    Al manejar un evento la funci&oacute;n encargada de dicha tarea recibir&aacute; un par&aacute;metro
+                    (que puede utilizarse o no) el cual refiere al objeto del evento disparado. Dicho evento se compone
+                    de varios atributos que brindan diferente informaci&oacute;n del evento. Los atributos del objeto
+                    evento son los siguientes:
+                    <ul>
+                        <li>
+                            <span class="badge badge-dark">event.altKey</span>
+                            Devuelve un valor indicando si la tecla <alt> fue pulsada durante el evento.
+                        </li>
+                        <li>
+                            <span class="badge badge-dark">event.bubbles</span>
+                            Devuelve un valor que indica si el evento se propaga hacia arriba a través del DOM o no.
+                        </li>
+                        <li>
+                            <span class="badge badge-dark">event.button</span>
+                            Devuelve el botón del ratón.
+                        </li>
+                        <li>
+                            <span class="badge badge-dark">event.cancelBubble</span>
+                            Devuelve un valor que indica si la propagación hacia arriba fue cancelada o no.
+                        </li>
+                        <li>
+                            <span class="badge badge-dark">event.cancelable</span>
+                            Devuelve un valor que indica si el evento se puede cancelar.
+                        </li>
+                        <li>
+                            <span class="badge badge-dark">event.charCode</span>
+                            Devuelve el valor Unicode de una tecla de carácter que fue apretada como parte de un evento
+                            keypress.
+                        </li>
+                        <li>
+                            <span class="badge badge-dark">event.clientX</span>
+                            Devuelve la posición horizontal del evento.
+                        </li>
+                        <li>
+                            <span class="badge badge-dark">event.clientY</span>
+                            Devuelve la posición vertical del evento.
+                        </li>
+                        <li>
+                            <span class="badge badge-dark">event.ctrlKey</span>
+                            Devuelve un valor que indica si la tecla <Ctrl> fue apretada durante el evento.
+                        </li>
+                        <li>
+                            <span class="badge badge-dark">event.currentTarget</span>
+                            Devuelve una referencia al objetivo actual registrado para el evento.
+                        </li>
+                        <li>
+                            <span class="badge badge-dark">event.detail</span>
+                            Devuelve detalles sobre el evento, dependiendo del tipo de evento.
+                        </li>
+                        <li>
+                            <span class="badge badge-dark">event.eventPhase</span>
+                            Utilizado para indicar qué fase del flujo del evento es actualmente en proceso de
+                            evaluación.
+                        </li>
+                        <li>
+                            <span class="badge badge-dark">event.explicitOriginalTarget</span>
+                            El objetivo del evento (específico a Mozilla).
+                        </li>
+                        <li>
+                            <span class="badge badge-dark">event.isChar</span>
+                            Devuelve un valor que indica si el evento produce o no una tecla de carácter.
+                        </li>
+                        <li>
+                            <span class="badge badge-dark">event.keyCode</span>
+                            Devuelve el valor Unicode de una tecla que no es caracter en un evento keypress o cualquier
+                            tecla en cualquier otro tipo de evento de teclado.
+                        </li>
+                        <li>
+                            <span class="badge badge-dark">event.layerX</span>
+                            Devuelve la coordenada horizontal del evento relativo a la capa actual.
+                        </li>
+                        <li>
+                            <span class="badge badge-dark">event.layerY</span>
+                            Devuelve la coordenada vertical del evento relativo a la capa actual.
+                        </li>
+                        <li>
+                            <span class="badge badge-dark">event.metaKey</span>
+                            Devuelve un valor booleano indicando si la meta tecla fue presionada durante un evento.
+                        </li>
+                        <li>
+                            <span class="badge badge-dark">event.originalTarget</span>
+                            El objetivo principal de un evento, antes de cualquier reapunte (Especifiación Mozilla).
+                        </li>
+                        <li>
+                            <span class="badge badge-dark">event.pageX</span>
+                            Devuelve la coordenada horizontal del evento, relativo al documento completo.
+                        </li>
+                        <li>
+                            <span class="badge badge-dark">event.pageY</span>
+                            Devuelve la coordenada vertical del evento, relativo al documento completo.
+                        </li>
+                        <li>
+                            <span class="badge badge-dark">event.relatedTarget</span>
+                            Identifica un objetivo secundario para el evento.
+                        </li>
+                        <li>
+                            <span class="badge badge-dark">event.screenX</span>
+                            Devuelve la coordenada horizontal del evento en la pantalla.
+                        </li>
+                        <li>
+                            <span class="badge badge-dark">event.screenY</span>
+                            Devuelve la coordenada vertical del evento en la pantalla.
+                        </li>
+                        <li>
+                            <span class="badge badge-dark">event.shiftKey</span>
+                            Devuelve un valor booleano indicando si la tecla <shift> fue presionada cuando el evento fue
+                                disparado.
+                        </li>
+                        <li>
+                            <span class="badge badge-dark">event.target</span>
+                            Devuelve una referencia al objetivo en la cual el evento fue originalmente enviado.
+                        </li>
+                        <li>
+                            <span class="badge badge-dark">event.timeStamp</span>
+                            Devuelve el momento de creación del evento.
+                        </li>
+                        <li>
+                            <span class="badge badge-dark">event.type</span>
+                            Devuelve el nombre del evento (distingue mayúsculas y minúsculas).
+                        </li>
+                        <li>
+                            <span class="badge badge-dark">event.view</span>
+                            El atributo vista identifica la AbstractView del cual el evento fue generado.
+                        </li>
+                        <li>
+                            <span class="badge badge-dark">event.which</span>
+                            Devuelve el valor Unicode de la tecla en un evento del teclado, sin importar el tipo de
+                            tecla que se presionó.
+                        </li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="alert alert-warning">
+            Para mayor detalles en el manejo de eventos referirse a los siguientes enlaces:
+            <ul>
+                <li>
+                    <a href="https://www.w3schools.com/js/js_events.asp">https://www.w3schools.com/js/js_events.asp</a>
+                </li>
+                <li>
+                    <a
+                        href="https://developer.mozilla.org/es/docs/Web/API/Event">https://developer.mozilla.org/es/docs/Web/API/Event</a>
+                </li>
+            </ul>
+        </div>
+    </main>
+
+    <div class="row">
+        <div class="col text-center">
+            <a class="btn btn-lg btn-outline-info" href="../6/arrays.html">
+                Ir a la siguiente sección >>
+            </a>
+        </div>
+    </div>
+
+    <script src="../../footer.js"></script>
+
+    <script type="text/javascript" src="manejando-eventos.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Federico Marchese" />
+
+    <link rel="shortcut icon" href="../../resources/favicon.ico" />
+
+    <title>Css pseudo clases</title>
+
+    <link rel="stylesheet" href="../../resources/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="pseudo-clases.css" />
+</head>
+
+<body>
+    <script src="../../navbar.js"></script>
+
+    <main class="container mt-3">
+
+        <h1>CSS - pseudo clases</h1>
+        <div class="row mt-3">
+            <div class="col">
+                <div class="alert alert-info">
+                    Una pseudoclase CSS es una palabra clave que se añade a los selectores y que especifica un estado
+                    especial del elemento seleccionado. Por ejemplo, <span class="badge badge-dark">:hover</span>
+                    aplicará un estilo cuando el usuario haga hover sobre el elemento especificado por el selector.
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                Las pseudoclase, junto con los pseudoelementos, permiten aplicar un estilo a un elemento no sólo en
+                relación con el contenido del árbol de documento, sino también en relación a factores externos como el
+                historial del navegador <span class="badge badge-warning">(:visited, por ejemplo)</span>, el estado de
+                su contenido <span class="badge badge-warning">(como :checked en algunos elementos de
+                    formulario)</span>, o la posición del ratón <span class="badge badge-warning">(como :hover que
+                    permite saber si el ratón está encima de un elemento o no)</span>.
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+            <div class="offset-2 col-8">
+                <h2>Sintaxis general</h2>
+                <figure class="figure">
+                    <img src="../imgs/pseudo-clases-sintaxis.png" class="figure-img img-fluid rounded" alt="sintaxis">
+                    <figcaption class="figure-caption">Al igual que las clases, se pueden concatenar la cantidad de
+                        pseudoclases que se deseen en un selector.</figcaption>
+                </figure>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+            <div class="offset-2 col-8">
+                <h2>Hover pseudo class</h2>
+                <div class="clase-ejemplo">
+                    Este div aplica la clase <span class="badge badge-info">clase-ejemplo</span> incluida en el archivo
+                    de css "3_pseudo-clases.css" en este mismo proyecto. Esta clase aplica un color de fondo al div
+                    actual, sin embargo, aplicando la pseudoclase <span class="badge badge-info">:hover</span> se
+                    realiza un cambio de color del fondo al pasar el mouse por arriba de este elemento.
+                </div>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+            <div class="offset-2 col-8">
+                <h2>Visited pseudo class</h2>
+                <p>
+                    <a href="#" class="clase-ejemplo">Este link</a> aplica la clase <span
+                        class="badge badge-info">clase-ejemplo</span> incluida en el archivo
+                    de css "3_pseudo-clases.css" en este mismo proyecto. Esta clase aplica la pseudoclase <span
+                        class="badge badge-info">:visited</span> que en este caso hara que la fuente cambie si el link
+                    ya fue visitado.
+                </p>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+            <div class="offset-2 col-8">
+                <h2>Disabled pseudo class</h2>
+                <div>
+                    Este boton <button class="clase-ejemplo" disabled>disabled button</button> aplica la clase <span
+                        class="badge badge-info">clase-ejemplo</span> incluida en el archivo
+                    de css "3_pseudo-clases.css" en este mismo proyecto. Esta clase aplica la pseudoclase <span
+                        class="badge badge-info">:disabled</span> que en este caso aplicará cambios sobre este
+                    elemento debido a que este div se encuentra marcado con el atributo <span
+                        class="badge badge-warning">disabled</span>.
+                </div>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+            <div class="offset-2 col-8">
+                <h2>Checked pseudo class</h2>
+                <div>
+                    La pseudo-clase :checked de CSS representa cualquier radio (<input type="radio">), checkbox (<input
+                        type="checkbox">) u option (&lt;option&gt; en un elemento &lt;select&gt;) que está marcado o
+                    conmutado a un estado on.
+                </div>
+                <br>
+                Este ejemplo aplicara el color rojo a los labels que esten asociados a un check que sea marcado:
+                <ul>
+                    <li><input type="checkbox" value="1" /><label for="checkbox1">texto para el check 1</label></li>
+                    <li><input type="checkbox" value="2" /><label for="checkbox2">texto para el check 2</label></li>
+                    <li><input type="checkbox" value="3" /><label for="checkbox3">texto para el check 3</label></li>
+                </ul>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="alert alert-warning">
+            Para mayor detalles sobre pseudo clases, su uso, sus aplicaciones y las distintas opciones existentes ver la
+            referencia en este <a href="https://developer.mozilla.org/es/docs/Web/CSS/Pseudo-classes">link</a>.
+        </div>
+    </main>
+
+    <div class="row">
+        <div class="col text-center">
+            <a class="btn btn-lg btn-outline-info" href="../4/selectores-css.html">
+                Ir a la siguiente sección >>
+            </a>
+        </div>
+    </div>
+
+    <script src="../../footer.js"></script>
+</body>
+
+</html>

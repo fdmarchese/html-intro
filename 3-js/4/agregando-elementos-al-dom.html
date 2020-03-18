@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Federico Marchese" />
+
+    <link rel="shortcut icon" href="../../resources/favicon.ico" />
+
+    <title>Agregando elementos al DOM</title>
+
+    <link rel="stylesheet" href="../../resources/css/bootstrap.min.css" />
+</head>
+
+<body>
+    <script src="../../navbar.js"></script>
+
+    <main class="container mt-3">
+        <div class="row">
+            <div class="col">
+                <h1 class="text-center">Agregando elementos al DOM con javascript</h1>
+                <div class="alert alert-info">
+                    JavaScript nos permite acceder a los distintos elementos del DOM (domain object model) y
+                    manipularlos según sea necesario. Una alteración muy utilizada es agregar o quitar elementos del
+                    DOM. Es para ello que existen determinadas funciones especiales en el lenguaje que permiten la
+                    interacción para lograr este fin y serán expuestas a continuación.
+                </div>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+            <div class="col-8">
+                <header>
+                    <h2>Agregando un elemento al DOM</h2>
+                    <small class="text-muted">ver archivo "agregando-elementos-al-dom.js"</small>
+                </header>
+                <p class="mt-3">
+                    Para adicionar elementos al DOM primero debemos obtener referencia a un elemento para poder
+                    determinar dónde será adicionado el nuevo elemento, con esto queremos decir si será adicionado
+                    antes, dentro o después del elemento.
+                    <ul>
+                        <li>
+                            Agregar el nuevo elemento antes del elemento seleccionado <span
+                                class="badge badge-info">preppend</span>
+                            <br />
+                            Con el botón "Preppend button" llamamos a la función <span
+                                class="badge badge-info">agregarBotonAntesDeElemento(idElemento);</span> definida
+                            en el archivo <code>agregando-elementos-al-dom.js</code>. Si se mira en detalle a esta
+                            función, lo que hace es acceder al elemento con id "divManipulado" y agrega un nuevo
+                            elemento de tipo "button" posicionándolo al principio del elemento seleccionado.
+                        </li>
+                        <li>
+                            Agregar el nuevo elemento después del elemento seleccionado <span
+                                class="badge badge-info">Append</span>
+                            <br />
+                            Con el botón "Append span" llamamos a la función <span
+                                class="badge badge-info">agregarSpanDespuesDelElemento(idElemento);</span> definida
+                            en el archivo <code>agregando-elementos-al-dom.js</code>. Si se mira en detalle a esta
+                            función, lo que hace es acceder al elemento con id "divManipulado" y agrega un nuevo
+                            elemento de tipo "span" posicionándolo al final del elemento seleccionado.
+                            <br />
+                            Con el botón "Append alert" llamamos a la función <span
+                                class="badge badge-info">agregarAlertDespuesDelElemento(idElemento);</span> definida
+                            en el archivo <code>agregando-elementos-al-dom.js</code>. Si se mira en detalle a esta
+                            función, lo que hace es acceder al elemento con id "divManipulado" y agrega un nuevo
+                            elemento de tipo "div" con los estilos de alerta de bootstrap y lo posiciona al final del
+                            elemento seleccionado.
+                        </li>
+                    </ul>
+                </p>
+            </div>
+            <div class="col-4">
+                <div class="row">
+                    <div class="col">
+                        <button class="btn btn-info" onclick="agregarBotonAntesDeElemento('divManipulado');">
+                            Preppend button
+                        </button>
+                    </div>
+                    <div class="col">
+                        <button class="btn btn-dark" onclick="agregarSpanDespuesDelElemento('divManipulado');">
+                            Append span
+                        </button>
+                    </div>
+                    <div class="col">
+                        <button class="btn btn-info" onclick="agregarAlertDespuesDelElemento('divManipulado');">
+                            Append alert
+                        </button>
+                    </div>
+                </div>
+
+                <hr />
+
+                <div id="divManipulado">
+                    <span class="badge badge-dark">Este es el div que se manipula a través de javascript.</span>
+                </div>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+            <div class="col-8">
+                <header>
+                    <h2>Utilizando innerText e innerHTML</h2>
+                    <small class="text-muted">ver archivo "agregando-elementos-al-dom.js"</small>
+                </header>
+                <p class="mt-3">
+                    Para editar el contenido de un elemento del DOM primero debemos obtener referencia a dicho elemento
+                    y luego javascript provee de mecanismos para alcanzar este objetivo.
+                    <br />
+                    Una de las propiedades que expone javascript de los objetos del DOM es <span
+                        class="badge badge-info">innerText</span> y otra de las propiedades que veremos a continuación
+                    es <span class="badge badge-info">innerHTML</span>
+                    <ul>
+                        <li>
+                            <span class="badge badge-info">innerText</span>
+                            <br />
+                            Con el botón "Usar InnerText" llamamos a la función <span
+                                class="badge badge-info">agregarInnerText(idElemento, texto);</span> definida
+                            en el archivo <code>agregando-elementos-al-dom.js</code>. Si se mira en detalle a esta
+                            función, lo que hace es acceder al elemento con id "divInnerText" y asigna un nuevo valor a
+                            la propiedad innerText del elemento. Esto hará que dentro del div se adicione el contenido
+                            asignado como texto.
+                        </li>
+                        <li>
+                            <span class="badge badge-info">innerHtml</span>
+                            <br />
+                            Con el botón "Usar innerHTML" llamamos a la función <span
+                                class="badge badge-info">agregarInnerHTML(idElemento, html);</span> definida
+                            en el archivo <code>agregando-elementos-al-dom.js</code>. Si se mira en detalle a esta
+                            función, lo que hace es acceder al elemento con id "divInnerHtml" y asigna un nuevo valor a
+                            la propiedad innerHTML del elemento. Esto hará que dentro del div se adicione el contenido
+                            asignado como html dentro del elemento.
+                            <br />
+                            El tercer botón que tenemos "Usar innerText para agregar html" expone que si se trata de
+                            asignar html a través la propiedad innerText, éste no se comportará como html, sino como
+                            texto.
+                        </li>
+                    </ul>
+                </p>
+            </div>
+            <div class="col-4">
+                <div class="row">
+                    <div class="col">
+                        <button class="btn btn-info" onclick="agregarInnerText('divInnerText', 'esto es un texto asignado');">
+                            Usar innerText
+                        </button>
+                    </div>
+                    <div class="col">
+                        <button class="btn btn-dark"
+                            onclick="agregarInnerHTML('divInnerHtml', '<button>un boton</button>');">
+                            Usar innerHTML
+                        </button>
+                    </div>
+                    <div class="col">
+                        <button class="btn btn-dark"
+                            onclick="agregarInnerText('divInnerText', '<button>un boton</button>');">
+                            Usar innerText para agregar html
+                        </button>
+                    </div>
+                </div>
+
+                <hr />
+
+                <div id="divInnerText">
+                    <span class="badge badge-dark">Este es el div al que se asignará innerText.</span>
+                </div>
+                <div id="divInnerHtml">
+                    <span class="badge badge-dark">Este es el div al que se asignará innerHTML.</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="row">
+        <div class="col text-center">
+            <a class="btn btn-lg btn-outline-info" href="../5/manejando-eventos.html">
+                Ir a la siguiente sección >>
+            </a>
+        </div>
+    </div>
+
+    <script src="../../footer.js"></script>
+
+    <script type="text/javascript" src="agregando-elementos-al-dom.js"></script>
+</body>
+
+</html>

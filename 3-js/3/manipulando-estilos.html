@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Federico Marchese" />
+
+    <link rel="shortcut icon" href="../../resources/favicon.ico" />
+
+    <title>Manipulando estilos con js</title>
+
+    <link rel="stylesheet" href="../../resources/css/bootstrap.min.css" />
+</head>
+
+<body>
+    <script src="../../navbar.js"></script>
+
+    <main class="container mt-3">
+        <div class="row">
+            <div class="col">
+                <h1 class="text-center">Manipulando estilos desde javascript</h1>
+                <div class="alert alert-info">
+                    JavaScript nos permite acceder a los distintos elementos del DOM (domain object model) y
+                    manipularlos según sea necesario. Una de las alteraciones más comunes que se hacen a los elementos
+                    del dom desde javascript es a los estilos visuales que utiliza un objeto en particular, ya sea
+                    añadiendo, modificando o quitando estilos al elemento o asignando y removiendo clases que utilice el
+                    elemento.
+                </div>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+            <div class="col-8">
+                <header>
+                    <h2>Modificando estilos de un elemento del DOM</h2>
+                    <small class="text-muted">ver archivo "manipulando-estilos.js"</small>
+                </header>
+                <p class="mt-3">
+                    Aquí declaramos tres botones.
+                    <ul>
+                        <li>
+                            Uno llama a la función <span class="badge badge-info">modificarColor(color);</span> definida
+                            en el archivo <code>manipulando-estilos.js</code>. Si se mira en detalle a esta función,
+                            lo que hace es acceder al elemento con id "divQueSeCambia" y asignar su color con el valor
+                            recibido por parámetro en la función (notar que en el html se está pasando como parámetro el
+                            valor que se quiere establecer como color, en este caso red).
+                        </li>
+                        <li>
+                            Otro llama a la función <span
+                                class="badge badge-info">modificarTamanoFuente(tamanoFuente);</span> definida
+                            en el archivo <code>manipulando-estilos.js</code>. Si se mira en detalle a esta función,
+                            lo que hace es acceder al elemento con id "divQueSeCambia" y asignar su tamaño de
+                            fuente con el valor recibido por parámetro en la función (notar que en el html se está
+                            pasando como parámetro el valor que se quiere establecer como tamaño y éste es un string con
+                            el valor y la unidad de medida, en este caso 18 unidades de px).
+                        </li>
+                        <li>
+                            Por último, uno que llama a la función <span
+                                class="badge badge-info">modificarFuente(familiaDeFuentes);</span> definida en el
+                            archivo <code>manipulando-estilos.js</code>. Si se mira en detalle a esta función, lo que
+                            hace es acceder al elemento con id "divQueSeCambia" y asignar su familia de fuentes con el
+                            valor recibido por parámetro en la función (notar que en el html se está pasando como
+                            parámetro el valor que se quiere establecer como familia de fuentes a utilizar, en este caso
+                            Comic Sans MS).
+                        </li>
+                    </ul>
+                </p>
+            </div>
+            <div class="col-4">
+                <div class="row">
+                    <div class="col">
+                        <button class="btn btn-info" onclick="modificarColor('red');">
+                            Cambiar color
+                        </button>
+                    </div>
+                    <div class="col">
+                        <button class="btn btn-dark" onclick="modificarTamanoFuente('18px');">
+                            Cambiar tamaño
+                        </button>
+                    </div>
+                    <div class="col">
+                        <button class="btn btn-info" onclick="modificarFuente('Comic Sans MS');">
+                            Cambiar fuente
+                        </button>
+                    </div>
+                </div>
+
+                <hr />
+
+                <div id="divQueSeCambia">
+                    Este texto aparece con los estilos por defecto y lo que va a pasar es que se modifique de acuerdo al
+                    botón que se presione.
+                </div>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+            <div class="col-8">
+                <header>
+                    <h2>Modificando clases de un elemento del DOM</h2>
+                    <small class="text-muted">ver archivo "manipulando-estilos.js"</small>
+                </header>
+                <p class="mt-3">
+                    Aquí declaramos tres botones, los cuales tienen 2 funciones: asignar el atributo class del elemento
+                    y concatenar una clase para que sea utilizada en el elemento. En este caso utilizaremos las clases
+                    <a href="https://getbootstrap.com/docs/4.4/components/alerts/">alert de bootstrap</a>, pero aplica a
+                    cualquier clase de igual forma.
+                    <ul>
+                        <li>
+                            Uno llama a la función <span class="badge badge-info">asignarClase(nombreClase);</span>
+                            definida en el archivo <code>manipulando-estilos.js</code>. Si se mira en detalle a esta
+                            función, lo que hace es acceder al elemento con id "divQueCambiaClases" y asignar su
+                            atributo clase con el valor recibido por parámetro en la función (notar que en el html se
+                            está pasando como parámetro el valor que se quiere establecer como color, en este caso
+                            alert).
+                        </li>
+                        <li>
+                            Otro que llama a la función <span class="badge badge-info">agregarClase(nombreClase);</span>
+                            definida en el
+                            archivo <code>manipulando-estilos.js</code>. Si se mira en detalle a esta función, lo que
+                            hace es acceder al elemento con id "divQueCambiaClases" y agregar una clase a la lista de
+                            clases que tiene asignadas ese elemento según el valor recibido por parámetro en la función
+                            (notar que en el html se está pasando como parámetro el valor que se quiere agregar como
+                            clase para utilizarse, siendo en este caso alert-danger).
+                        </li>
+                        <li>
+                            Por último, uno que llama a la función <span
+                                class="badge badge-info">agregarClase(nombreClase);</span> definida en el
+                            archivo <code>manipulando-estilos.js</code>. Si se mira en detalle a esta función, lo que
+                            hace es acceder al elemento con id "divQueCambiaClases" y agregar una clase a la lista de
+                            clases que tiene asignadas ese elemento según el valor recibido por parámetro en la función
+                            (notar que en el html se está pasando como parámetro el valor que se quiere agregar como
+                            clase para utilizarse, siendo en este caso alert-info).
+                        </li>
+                    </ul>
+                </p>
+            </div>
+            <div class="col-4">
+                <div class="row">
+                    <div class="col">
+                        <button class="btn btn-info" onclick="asignarClase('alert');">
+                            Asignar clase alert
+                        </button>
+                    </div>
+                    <div class="col">
+                        <button class="btn btn-dark" onclick="agregarClase('alert-danger');">
+                            Agregar clase alert-danger
+                        </button>
+                    </div>
+                    <div class="col">
+                        <button class="btn btn-info" onclick="agregarClase('alert-info');">
+                            Agregar clase alert-info
+                        </button>
+                    </div>
+                </div>
+
+                <hr />
+
+                <div id="divQueCambiaClases">
+                    Este texto aparece con los estilos por defecto y lo que va a pasar es que se modifique de acuerdo al
+                    botón que se presione.
+                </div>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+            <div class="col-8">
+                <header>
+                    <h2>Modificando clases de un elemento del DOM</h2>
+                    <small class="text-muted">ver archivo "manipulando-estilos.js"</small>
+                </header>
+                <p class="mt-3">
+                    Aplicar Toggle de una clase a un elemento hará que si el elemento no tiene la clase la aplique y si
+                    ya la tenía simplemente la deje de tener.
+                    <br />
+                    Aquí declaramos tres botones, los cuales llaman a la función <span
+                        class="badge badge-info">alternarClase(idDelElemento, nombreClase);</span> localizada en el
+                    archivo <code>manipulando-estilos.js</code>. Para ver detalles de la implementación de la función
+                    ver el archivo js de referencia. En este caso utilizaremos las clases <a
+                        href="https://getbootstrap.com/docs/4.4/utilities/colors/#background-color">bg-color de
+                        bootstrap</a>, pero aplica a cualquier clase de igual forma.
+                </p>
+            </div>
+            <div class="col-4">
+                <div class="row">
+                    <div class="col">
+                        <button class="btn btn-info" onclick="alternarClase('elemento-color-1', 'bg-primary');">
+                            Toggle de clase 1
+                        </button>
+                    </div>
+                    <div class="col">
+                        <button class="btn btn-info" onclick="alternarClase('elemento-color-2', 'bg-danger');">
+                            Toggle de clase 2
+                        </button>
+                    </div>
+                    <div class="col">
+                        <button class="btn btn-info" onclick="alternarClase('elemento-color-3', 'bg-success');">
+                            Toggle de clase 3
+                        </button>
+                    </div>
+                </div>
+
+                <hr />
+
+                <div class="row">
+                    <div class="col">
+                        <div id="elemento-color-1" class="bg-primary"
+                            style="height:50px; width: 50px; border-radius: 50%;"></div>
+                    </div>
+                    <div class="col">
+                        <div id="elemento-color-2" class="bg-danger"
+                            style="height:50px; width: 50px; border-radius: 50%;"></div>
+                    </div>
+                    <div class="col">
+                        <div id="elemento-color-3" class="bg-success"
+                            style="height:50px; width: 50px; border-radius: 50%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="row">
+        <div class="col text-center">
+            <a class="btn btn-lg btn-outline-info" href="../4/agregando-elementos-al-dom.html">
+                Ir a la siguiente sección >>
+            </a>
+        </div>
+    </div>
+
+    <script src="../../footer.js"></script>
+
+    <script type="text/javascript" src="manipulando-estilos.js"></script>
+</body>
+
+</html>

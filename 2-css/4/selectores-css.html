@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Federico Marchese" />
+
+    <link rel="shortcut icon" href="../../resources/favicon.ico" />
+
+    <title>Selectores CSS</title>
+
+    <link rel="stylesheet" href="../../resources/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="selectores-css.css" />
+</head>
+
+<body>
+    <script src="../../navbar.js"></script>
+
+    <main class="container mt-3">
+
+        <h1>Selectores CSS</h1>
+        <div class="row mt-3">
+            <div class="col">
+                <div class="alert alert-info">
+                    Adicionalmente a los mecanismos ya explicados para "seleccionar" los elementos html a los que se
+                    quiere afectar con un set de reglas de estilos existen operadores para hacer reglas mas complejas.
+                </div>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+            <div class="offset-2 col-8">
+                <h2>Selector &gt;</h2>
+                <p>
+                    El selector &gt; está indicando que el elemento a ser afectado por la regla es el elemento de la
+                    derecha cuando tiene al de la izquierda como su padre.
+                </p>
+                Ejemplo: <code>div &gt; span.texto-rojo { color: red; }</code>
+                <div>
+                    <span class="texto-rojo">
+                        La regla aplicada en este caso afecta solamente al contenido de los &lt;span&gt; a los que se le
+                        aplica la regla <span class="badge badge-info">.texto-rojo</span> y se encuentran dentro de un
+                        &lt;div&gt;.
+                    </span>
+                    <p>
+                        Este valor no se ve afetado aun aplicando la clase <span
+                            class="badge badge-info">.texto-rojo</span> ya que es un &lt;p&gt; y no un &lt;span&gt;.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+            <div class="offset-2 col-8">
+                <h2>Selector +</h2>
+                <p>
+                    Este selector referencia al elemento de la derecha cuando es inmediatamente precedido por el de la
+                    izquierda. Ambos elementos deben compartir el mismo padre.
+                </p>
+                Ejemplo: <code>span.texto-rojo + span{ color: blue; }</code>
+                <div>
+                    <span class="texto-rojo">Este elemento span aplica la clase "texto-rojo".</span>
+                    <span>Este elemento span es el siguiente elemento span al que aplica la clase "texto-rojo" que se va
+                        a ver afectado por la regla.</span>
+                </div>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+            <div class="offset-2 col-8">
+                <h2>Selector ~</h2>
+                <p>
+                    Este selector es similar al anterior pero el elemento afectado no necesita estar precediendo de
+                    inmediato al elemento de la izquierda. Además, más de un elemento puede ser afectado.
+                </p>
+                Ejemplo: <code>span.texto-rojo ~ p { color: darkgreen; }</code>
+                <div>
+                    <span class="texto-rojo">Este elemento span aplica la clase "texto-rojo".</span>
+                    <p>
+                        Este elemento p es el primero que es precedido por el span al que aplica la clase "texto-rojo".
+                    </p>
+                    <p>
+                        Este elemento p es el segundo que es precedido por el span al que aplica la clase "texto-rojo".
+                    </p>
+                </div>
+                <p>
+                    Este elemento p es el tercero que es precedido por el span al que aplica la clase "texto-rojo" pero
+                    tiene un padre diferente.
+                </p>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+            <div class="offset-2 col-8">
+                <h2>Selector *</h2>
+                <p>
+                    Este selector es el selector universal. Eso quiere decir que lo definido utilizando este selector
+                    aplica a todo el documento.
+                </p>
+                Ejemplo: <code>* { margin: 0px; padding: 0px; }</code>
+                <p>
+                    Esta regla hace que se aplique un margen y padding en 0px;
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <div class="row">
+        <div class="col text-center">
+            <a class="btn btn-lg btn-outline-info" href="../5/atributo-display.html">
+                Ir a la siguiente sección >>
+            </a>
+        </div>
+    </div>
+
+    <script src="../../footer.js"></script>
+</body>
+
+</html>

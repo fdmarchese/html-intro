@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Federico Marchese" />
+
+    <link rel="shortcut icon" href="../../resources/favicon.ico" />
+
+    <title>Trabajando con objetos</title>
+
+    <link rel="stylesheet" href="../../resources/css/bootstrap.min.css" />
+</head>
+
+<body>
+    <script src="../../navbar.js"></script>
+
+    <main class="container mt-3">
+        <div class="row">
+            <div class="col">
+                <h1 class="text-center">Trabajando con objetos</h1>
+                <div class="alert alert-info">
+                    El tipo objeto es una colección de datos relacionados que generalmente consta de variables y
+                    funciones. Estas variables y funciones se denominan generalmente <code>propiedades</code> y
+                    <code>métodos</code> cuando están dentro de objetos.
+                </div>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+            <div class="col">
+                <header>
+                    <h2>Cómo utilizar objetos</h2>
+                    <small class="text-muted">ver archivo "objetos.js"</small>
+                </header>
+                <p class="mt-3">
+                    Hay dos formas de crear un objeto:
+                    <ul>
+                        <li>
+                            <code>var objeto = new Object;</code>
+                        </li>
+                        <li>
+                            <code>var objeto = {};</code> => objeto literal
+                        </li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+            <div class="col">
+                <header>
+                    <h2>Agregando propiedades a los objetos</h2>
+                    <small class="text-muted">ver archivo "objetos.js"</small>
+                </header>
+                <p class="mt-3">
+                    Si queremos agregar propiedades:
+                    <br />
+                    <img src="../imgs/js-objeto-persona.PNG" height="100px">
+                </p>
+                Podemos acceder a las propiedades de un objeto a través de:
+                <ul>
+                    <li>
+                        Notación de puntos:
+                        <br />
+                        <code>persona.nombre</code>
+                        <br />
+                        <code>persona.edad</code>
+                    </li>
+                    <li>
+                        Notación de corchetes:
+                        <br />
+                        <code>persona['nombre']</code>
+                        <br />
+                        <code>persona['edad']</code>
+                    </li>
+                </ul>
+                <p>
+                    Podemos actualizar los valores de un objeto:
+                    <br />
+                    <code>persona.edad = 30</code>
+                    <br />
+                    <code>persona['nombre'] = 'Carlos'</code>
+                </p>
+                <p>
+                    Adicionalmente podemos crear miembros completamente nuevos a un objeto existente de la siguiente
+                    forma:
+                    <br />
+                    <code>persona.pais = 'Canadá'</code>
+                    <br />
+                    <code>persona['apellido'] = 'Sánchez'</code>
+                </p>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+            <div class="col-8">
+                <header>
+                    <h2>this</h2>
+                    <small class="text-muted">ver archivo "objetos.js"</small>
+                </header>
+                <p class="mt-3">
+                    Básicamente se refiere al objeto actual en el que se está escribiendo el código.
+                    <br />
+                    si dentro de persona escribimos un método de la siguiente forma:
+                    <br />
+                    <img src="../imgs/js-funcion-con-this.PNG" height="60px">
+                    <br />
+                    En este caso <code>this</code> hace referencia al objeto persona en cuestión.
+                </p>
+            </div>
+            <div class="col-4">
+                <button class="btn btn-primary form-control" onclick="saludarJuan()">
+                    Saludar a Juan
+                </button>
+                <br />
+                <br />
+                <button class="btn btn-primary form-control" onclick="saludarCarlos()">
+                    Saludar a Carlos
+                </button>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+            <div class="col">
+                <header>
+                    <h2>Constructores</h2>
+                    <small class="text-muted">ver archivo "objetos.js"</small>
+                </header>
+                <p class="mt-3">
+                    Es un método especial llamado en el momento de la creación de instancias.
+                    <br />
+                    En javascript la función sirve como el constructor del objeto, por lo que no hay necesidad de
+                    definir explícitamente un método constructor.
+                    <br />
+                    El constructor se usa para establecer las propiedades del objeto o para ejecutar cualquier método
+                    necesario para preparar el objeto para su uso.
+                </p>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+            <div class="col">
+                <header>
+                    <h2>Clases</h2>
+                    <small class="text-muted">ver archivo "objetos.js"</small>
+                </header>
+                <p class="mt-3">
+                    Consideradas una mejora sintáctica sobre la herencia.
+                    <br />
+                    Proveen una sintáxis más clara y simple para crear objetos y lidiar con la herencia.
+                    <br />
+                    Dos componentes:
+                    <ul>
+                        <li>
+                            <span class="badge badge-info">Declaración de clases</span>: Para declarar una clase se
+                            utiliza la palabra reservada <code>class</code> y un nombre para la clase.
+                            <br />
+                            <img src="../imgs/js-clases.PNG" height="100px">
+                        </li>
+                        <li>
+                            <span class="badge badge-info">Expresión de clases</span>: Otra manera de definir una clase.
+                            Pueden ser nombradas o anónimas.
+                            <br />
+                            <div class="row">
+                                <div class="col">
+                                    Anónima:
+                                    <br />
+                                    <img src="../imgs/js-clase-anonima.PNG" height="100px">
+                                </div>
+                                <div class="col">
+                                    Nombrada:
+                                    <br />
+                                    <img src="../imgs/js-clase-nombrada.PNG" height="100px">
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+            <div class="col">
+                <header>
+                    <h2>extends</h2>
+                    <small class="text-muted">ver archivo "objetos.js"</small>
+                </header>
+                <p class="mt-3">
+                    La palabra reservada extends es usada para declaraciones o expresiones de clase para crear una clase
+                    hija.
+                    <br />
+                    Ejemplo:
+                    <br />
+                    <img src="../imgs/js-extends.PNG" height="400px">
+                </p>
+                <p>
+                    El método <code>constructor</code> es un método especial para crear e inicializar un objeto creado
+                    por una clase.
+                    Sólo puede haber un método especial con el nombre "constructor" en una clase.
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <script src="../../footer.js"></script>
+
+    <script type="text/javascript" src="objetos.js"></script>
+</body>
+
+</html>

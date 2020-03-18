@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Federico Marchese" />
+
+    <link rel="shortcut icon" href="../../resources/favicon.ico" />
+
+    <title>Input y sus atributos</title>
+
+    <link rel="stylesheet" href="../../resources/css/bootstrap.min.css" />
+
+    <style>
+        input:valid {
+            color: #000;
+            border: 1px solid #000;
+        }
+
+        input:invalid {
+            color: red;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <script src="../../navbar.js"></script>
+
+    <main class="container mt-3">
+
+        <h1>El elemento input y sus atributos</h1>
+        <div class="row mt-3">
+            <div class="col">
+                <div class="alert alert-info">
+                    El elemento HTML <code>&lt;input&gt;</code> se usa para crear controles interactivos para
+                    formularios basados en la web, que reciban datos del usuario. La forma en que
+                    <code>&lt;input&gt;</code> funciona varía considerablemente dependiendo del valor de su atributo
+                    type.
+                </div>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+            <div class="col">
+                <h2>Tipos de input (dado por su atributo "type")</h2>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>type</th>
+                                <th>HTML5</th>
+                                <th>descripción</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>button</td>
+                                <td>no</td>
+                                <td>Botón sin un comportamiento específico. <input type="button" /></td>
+                            </tr>
+                            <tr>
+                                <td>checkbox</td>
+                                <td>no</td>
+                                <td>Casilla de selección. Se debe usar el atributo value para definir el valor que se
+                                    enviará por este elemento. Se usa el atributo checked para indicar si el elemento
+                                    está seleccionado. También se puede usar el atributo indeterminate (el cual solo se
+                                    puede establecer programaticamente) para indicar que la casilla está en un estado
+                                    indeterminado (en la mayoría de las plataformas, se dibuja una línea horizontal a
+                                    través de la casilla). <input type="checkbox" /></td>
+                            </tr>
+                            <tr>
+                                <td>color</td>
+                                <td>sí</td>
+                                <td>Control para espicificar un color. Una interfaz de selección de color no
+                                    requiere más funcionalidad que la de aceptar colores simples como texto <input
+                                        type="color" /> </td>
+                            </tr>
+                            <tr>
+                                <td>date</td>
+                                <td>sí</td>
+                                <td>Control para introducir una fecha (año, mes y día, sin tiempo). <input
+                                        type="date" /></td>
+                            </tr>
+                            <tr>
+                                <td>datetime</td>
+                                <td>sí</td>
+                                <td>Control para introducir una fecha y hora (horas, minutos, segundos y fracción de
+                                    segundo), basado en la zona horaria UTC. Esta característica ha sido removida de
+                                    WHATWG HTML. <input type="datetime" /></td>
+                            </tr>
+                            <tr>
+                                <td>datetime-local</td>
+                                <td>sí</td>
+                                <td>Control para introducir fecha y hora, sin zona horaria específica. <input
+                                        type="datetime-local" /></td>
+                            </tr>
+                            <tr>
+                                <td>email</td>
+                                <td>sí</td>
+                                <td>Campo para introducir una dirección de correo electrónico. El valor introducido se
+                                    valida para que contenga una cadena vacía o una dirección de correo válida antes de
+                                    enviarse. Las pseudo-clases :valid y :invalid son aplicadas segun corresponda.
+                                    <input type="email" class="form-control" /></td>
+                            </tr>
+                            <tr>
+                                <td>file</td>
+                                <td>no</td>
+                                <td>Control que permite al usuario seleccionar un archivo. Se puede usar el atributo
+                                    accept para definir los tipos de archivo que el control podrá seleccionar. <input
+                                        type="file" /></td>
+                            </tr>
+                            <tr>
+                                <td>hidden</td>
+                                <td>no</td>
+                                <td>Control que no es mostrado en pantalla, pero cuyo valor es enviado al servidor.</td>
+                            </tr>
+                            <tr>
+                                <td>image</td>
+                                <td>no</td>
+                                <td>Botón de envío de formulario con gráfico. Se debe usar el atributo src para definir
+                                    el origen de la imagen y el atributo alt para definir un texto alternativo. Se puede
+                                    usar los atributos height y width para definir el tamaño de la imagen en píxeles.
+                                    <input type="image" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>month</td>
+                                <td>sí</td>
+                                <td>
+                                    Control para introducir un mes y año, sin zona horaria específica.
+                                    <input type="month" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>number</td>
+                                <td>sí</td>
+                                <td>
+                                    Control para introducir un número de punto flotante.
+                                    <input type="number" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>password</td>
+                                <td>no</td>
+                                <td>Control de línea simple cuyo valor permanece oculto. Se puede usar el atributo
+                                    maxlength para especificar la longitud máxima del valor que se puede introducir.
+                                    <input type="password" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>radio</td>
+                                <td>no</td>
+                                <td>Botón radio. Se debe usar el atributo value para definir el valor que se enviará por
+                                    este elemento. Se usa el atributo checked para indicar si el elemento está
+                                    seleccionado de forma predeterminada. Los botones radio que tengan el mismo valor
+                                    para su atributo name están dentro del mismo "grupo de botones radio". Solo un botón
+                                    radio dentro de un grupo puede ser seleccionado a la vez.
+                                    <input type="radio" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>range</td>
+                                <td>sí</td>
+                                <td>Control para introducir un número cuyo valor exacto no es importante. Este control
+                                    usa los siguientes valores predeterminados si no se especifica cada atributo:
+                                    min: 0
+                                    max: 100
+                                    value: min + (max - min) / 2, o min si max es menor que min
+                                    step: 1
+                                    <input id="rgInput" type="range" min="0" max="100" value="min + (max - min) / 2"
+                                        step="1" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>reset</td>
+                                <td>no</td>
+                                <td>Botón que restaura los contenidos de un formulario a sus valores predeterminados.
+                                    <input type="reset" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>search</td>
+                                <td>sí</td>
+                                <td>Cuadro de texto de línea simple para introducir textos de búsqueda. Los saltos de
+                                    línea son eliminados automáticamente del valor introducido.
+                                    <input type="search" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>submit</td>
+                                <td>no</td>
+                                <td>Botón que envía el formulario.</td>
+                            </tr>
+                            <tr>
+                                <td>tel</td>
+                                <td>sí</td>
+                                <td>Control para introducir un número telefónico. Los saltos de línea son eliminados
+                                    automáticamente del valor introducido, pero no hay otra sintaxis forzada. Se pueden
+                                    usar atributos como pattern y maxlength para restringir los valores introducidos en
+                                    este control. Las pseudo-clases CSS :valid y :invalid son aplicadas segun
+                                    corresponda.
+                                    <input type="tel" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>text</td>
+                                <td>no</td>
+                                <td>Campo de texto de línea simple. Los saltos de línea son eliminados automáticamente
+                                    del valor introducido.
+                                    <input type="text" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>time</td>
+                                <td>sí</td>
+                                <td>Control para introducir un valor de tiempo sin zona horaria específica.
+                                    <input type="time" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>url</td>
+                                <td>sí</td>
+                                <td>Campo para editar una URL. El valor introducido se valida para que contenga una
+                                    cadena vacía o una ruta URL absoluta antes de enviarse. Los saltos de línea y
+                                    espacios en blanco al principio o al final del valor son eliminados automáticamente.
+                                    Se pueden usar atributos como pattern y maxlength para restringir los valores
+                                    introducidos en el control. Las pseudo-clases :valid y :invalid son aplicadas segun
+                                    corresponda.
+                                    <input type="url" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>week</td>
+                                <td>sí</td>
+                                <td>Control para introducir una fecha que consiste en número de semana del año y número
+                                    de semana sin zona horaria específica.
+                                    <input type="week" />
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+            <div class="offset-2 col-8">
+                <h2>Atributo value</h2>
+                <p>
+                    El atributo value indica el valor incial que tendrá un elemento input.
+                </p>
+                Ejemplo:
+                <br /> <br />
+                <input type="text" value="esto es un cuadro de texto" class="form-control" />
+                <br />
+                <input type="button" value="este es un botón" class="btn btn-primary" />
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+            <div class="offset-2 col-8">
+                <h2>Atributo readonly</h2>
+                <p>
+                    Especifica que un elemento es de solo lectura como su nombre lo indica. Esto quiere decir que no
+                    puede ser modificado por el usuario.
+                </p>
+                Ejemplo:
+                <br /> <br />
+                <input type="text" value="esto es un cuadro de texto" class="form-control" readonly />
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+            <div class="offset-2 col-8">
+                <h2>Atributo disabled</h2>
+                <p>
+                    Especifica que un control se encuentra deshabilitado. Esto quiere decir que no son utilizables, no
+                    son clickeables y que su contenido no será enviado en un formulario en caso de encontrarse dentro de
+                    uno.
+                </p>
+                Ejemplo:
+                <br /> <br />
+                <input type="text" value="esto es un cuadro de texto" class="form-control" disabled />
+                <br />
+                <input type="button" value="esto es un botón" class="btn btn-primary" disabled />
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+            <div class="offset-2 col-8">
+                <h2>Atributo maxlength</h2>
+                <p>
+                    Especifica la longitud máxima de caracteres admitidos por el control.
+                </p>
+                Ejemplo:
+                <br /> <br />
+                <input type="text" class="form-control" value="maxlength de 15" maxlength="15" />
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="alert alert-warning">
+            Para mayor detalles sobre los atributos que aplican sobre los input, sus detalles y aplicaciones mirar el
+            siguiente <a href="https://www.w3schools.com/html/html_form_attributes.asp">link</a>.
+        </div>
+    </main>
+
+    <div class="row">
+        <div class="col text-center">
+            <a class="btn btn-lg btn-outline-info" href="../../2-css/index.html">
+                Ir a la siguiente sección >>
+            </a>
+        </div>
+    </div>
+
+    <script src="../../footer.js"></script>
+</body>
+
+</html>

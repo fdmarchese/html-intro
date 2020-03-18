@@ -1,0 +1,11 @@
+.no-mostrar{
+    display: none;
+}
+
+.en-bloque {
+    display: block;
+}
+
+.en-linea {
+    display: inline;
+}

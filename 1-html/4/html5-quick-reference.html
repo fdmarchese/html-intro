@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Federico Marchese" />
+
+    <link rel="shortcut icon" href="../../resources/favicon.ico" />
+
+    <title>Elementos Html</title>
+
+    <link rel="stylesheet" href="../../resources/css/bootstrap.min.css" />
+</head>
+
+<body>
+    <script src="../../navbar.js"></script>
+
+    <main class="container">
+
+        <h1>Algunos elementos html</h1>
+
+        <div class="alert alert-info">
+            En la tabla a continuación se pueden encontrar algunos de los elementos html5 con su respectivo valor
+            semántico.
+            <br />
+            <small class="text-muted">
+                <span class="font-weight-bold">NOTA</span> no debe ser tomado como fuente de referencia. La siguiente
+                lista debe ser sólo una guía.
+            </small>
+        </div>
+
+        <div class="table-responsive">
+            <table class="table table-condensed table-bordered table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col" style="width: 150px;">Markup</th>
+                        <th scope="col">Descripción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>&lt;header&gt;</code></td>
+                        <td>
+                            Este elemento presenta información introductoria y puede ser aplicado en diferentes
+                            secciones del documento.
+                            Tiene el propósito de contener la cabecera de una sección pero también puede ser utilizado
+                            para agrupar índices,
+                            formularios de búsqueda, logos, etc...
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>&lt;nav&gt;</code></td>
+                        <td>
+                            Este elemento indica una sección de enlaces con propósitos de
+                            navegación, como menús o índices. No todos los enlaces dentro de una página web tienen
+                            que estar dentro de
+                            un elemento &lt;nav&gt;, solo aquellos que forman partes de bloques de navegación.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>&lt;section&gt;</code></td>
+                        <td>
+                            Este elemento representa una sección general del documento. Es usualmente utilizado para
+                            construir varios bloques de contenido (por ejemplo, columnas) con el propósito de ordenar el
+                            contenido que
+                            comparte una característica específica, como capítulos o páginas de un libro, grupo de
+                            noticias, artículos, etc...
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>&lt;aside&gt;</code></td>
+                        <td>
+                            Este elemento representa contenido que está relacionado con el contenido principal
+                            pero no es parte del mismo. Ejemplos pueden ser citas, información en barras laterales,
+                            publicidad, etc...
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>&lt;footer&gt;</code></td>
+                        <td>
+                            Este elemento representa información adicional sobre su elemento
+                            padre. Por ejemplo, un elemento &lt;footer&gt; insertado al final del cuerpo proveerá
+                            información adicional sobre el cuerpo del documento, como el pie normal de una página web.
+                            Puede
+                            ser usado no solo para el cuerpo sino también para diferentes secciones dentro del
+                            cuerpo, otorgando información adicional sobre estas secciones específicas.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>&lt;article&gt;</code></td>
+                        <td>
+                            Este elemento representa una porción independiente de información relevante (por ejemplo,
+                            cada artículo de un periódico o cada entrada de un blog). El elemento &lt;article&gt;
+                            puede ser anidado y usado para mostrar una lista dentro de otra lista de ítems
+                            relacionados, como comentarios de usuarios en entradas de blogs, por ejemplo.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>&lt;hgroup&gt;</code></td>
+                        <td>
+                            Este elemento es usado para agrupar elementos H cuando la cabecera tiene
+                            múltiples niveles (por ejemplo, una cabecera con título y subtítulo).
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>&lt;figure&gt;</code></td>
+                        <td>
+                            Este elemento representa una porción independiente de contenido (por
+                            ejemplo, imágenes, diagramas o videos) que son referenciadas desde el
+                            contenido principal. Esta es información que puede ser removida sin
+                            afectar el fluido del resto del contenido.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>&lt;figcaption&gt;</code></td>
+                        <td>
+                            Este elemento es utilizado para mostrar una leyenda o pequeño texto relacionado con
+                            el contenido de un elemento &lt;figure&gt;, como la descripción de una imagen.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>&lt;mark&gt;</code></td>
+                        <td>
+                            Este elemento resalta un texto que tiene
+                            relevancia en una situación en particular o que ha sido
+                            mostrado en respuesta de la actividad del usuario.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>&lt;small&gt;</code></td>
+                        <td>
+                            Este elemento representa contenido al margen, como
+                            letra pequeña (por ejemplo, descargos, restricciones
+                            legales, declaración de derechos, etc...).
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>&lt;cite&gt;</code></td>
+                        <td>
+                            Este elemento es usado para mostrar el título de un trabajo (libro, película, poema, etc...)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>&lt;address&gt;</code></td>
+                        <td>
+                            Este elemento encierra información de contacto para un elemento &lt;article&gt; o el
+                            documento completo. Es recomendable que sea insertado dentro de un elemento &lt;footer&gt;.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>&lt;time&gt;</code></td>
+                        <td>
+                            Este elemento se utiliza para mostrar fecha y hora en formatos comprensibles por los
+                            usuarios y el navegador. El valor para los usuarios es ubicado entre las etiquetas mientras
+                            que el específico para programas y navegadores es incluido como el valor del atributo
+                            datetime. Un segundo atributo optativo llamado pubdate es usado para indicar que el valor de
+                            datetime es la fecha de publicación.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <div class="row">
+        <div class="col text-center">
+          <a class="btn btn-lg btn-outline-info" href="../5/html5_header.html">
+            Ir a la siguiente sección >>
+          </a>
+        </div>
+      </div>
+    
+    <script src="../../footer.js"></script>
+</body>
+
+</html>

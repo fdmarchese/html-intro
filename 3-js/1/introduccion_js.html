@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Federico Marchese" />
+
+    <link rel="shortcut icon" href="../../resources/favicon.ico" />
+
+    <title>Introducción a Javascript</title>
+
+    <link rel="stylesheet" href="../../resources/css/bootstrap.min.css" />
+</head>
+
+<body>
+    <script src="../../navbar.js"></script>
+
+    <main class="container mt-3">
+        <div class="row">
+            <div class="col">
+                <h1 class="text-center">Introducción a Javascript</h1>
+                <div class="alert alert-info">
+                    JavaScript (JS) es un lenguaje ligero e interpretado, orientado a objetos con funciones de primera
+                    clase, más conocido como el lenguaje de script para páginas web, pero también usado en muchos
+                    entornos sin navegador, tales como node.js, Apache CouchDB y Adobe Acrobat. Es un lenguaje script
+                    multi-paradigma, basado en prototipos, dinámico, soporta estilos de programación funcional,
+                    orientada a objetos e imperativa.
+                    <br />
+                    JavaScript es case-sensitive (distingue mayúsculas y minúsculas) y utiliza el conjunto de caracteres
+                    Unicode.
+                    <br />
+                    En JavaScript, las instrucciones son llamadas Sentencias y son separadas por un punto y coma <span
+                        class="badge badge-info">;</span>.
+                </div>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+            <div class="col">
+                <header>
+                    <h2>La consola javascript</h2>
+                    <small class="text-muted">en chrome se accede presionando F12</small>
+                </header>
+                <p>
+                    Muestra información sobre la página web que se está ejecutando en el momento y también incluye una
+                    línea de comando que puede ser utilizada para ejecutar expresiones javascript en la página actual.
+                    <br />
+                    La función <span class="badge badge-info">console.log()</span> muestra la información proporcionada
+                    como parámetro en la consola de javascript, como por ejemplo en este caso podemos ver que se declara
+                    una variable y se muestra por pantalla así como se muestra un literal "Hola Mundo!".
+                    <br />
+                    <img src="../imgs/js-console.PNG">
+                </p>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+            <div class="col">
+                <header>
+                    <h2>Comentarios</h2>
+                </header>
+                <p>
+                    Para realizar comentarios en javascript tener en cuenta que se tiene dos tipos de sintaxis para
+                    comentar:
+                    <br />
+                    <img src="../imgs/js-comentarios.PNG">
+                    <br />
+                    Los comentarios son anotaciones en el código fuente de un programa que son ignoradas por el
+                    intérprete. Los comentarios deben usarse para describir <span class="badge badge-info">aspectos
+                        importantes</span>, por ejemplo algo que permita una mejor comprensión del código a otro
+                    programador que tenga que entender la funcionalidad. Cuando el comentario no provee información útil
+                    el comentario en sí no es útil y por tanto no debería siquiera estar presente. Otro punto es que
+                    bajo ningún punto de vista se debe tener código comentado en un código fuente productivo ya que no
+                    aporta absolutamente nada.
+                </p>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+            <div class="col">
+                <header>
+                    <h2>Declaraciones de variables en js</h2>
+                    <small class="text-muted">ver archivo "introduccion_js.js" líneas 1-27</small>
+                </header>
+                <p>
+                    Las variables se usan como nombres simbólicos para referenciar valores en la aplicación. Los nombres
+                    de las variables, llamados identificadores, se rigen por ciertas reglas en javascript.
+                    <br />
+                    Un identificador en js tiene que empezar por una letra, un guión bajo (_) o un símbolo $, los
+                    valores subsiguientes además pueden contener números.
+                    <br />
+                    Javascript diferencia entre mayúsculas y minúsculas (es case sensitive), por lo tanto las letras
+                    incluyen desde "A" a la "Z" y desde la "a" a la "z".
+                </p>
+
+                Hay 3 tipos de declaraciones de variables en Javascript:
+                <ul class="mt-3">
+                    <li>
+                        <span class="badge badge-info">var</span>: Declara una variable, inicializándola opcionalmente a
+                        un valor que se elija. Podrá cambiar su valor y su scope es local o global.
+                        <br />
+                        Ejemplo: <code>var x = 2;</code>.
+                    </li>
+                    <li>
+                        Otra forma de declarar una variable en javascript es simplemente asignando un valor. <span
+                            class="badge badge-info">x = 2</span>
+                        <br />
+                        Esto <span class="text-warning bg-dark">siempre declara una variable global y no puede ser
+                            cambiada a nivel local</span>.
+                        <br />
+                        Esto genera una advertencia strict de JavaScript, por lo que no se debería usar esta variante.
+                    </li>
+                    <li>
+                        <span class="badge badge-info">let</span>: Declara una variable local en un bloque de ámbito
+                        inicializándola opcionalmente a un valor que se elija. Podrá cambiar su valor.
+                        <br />
+                        Ejemplo: <code>let y = 2;</code>.
+                    </li>
+                    <li>
+                        <span class="badge badge-info">const</span>: Declara una variable de sólo lectura en un bloque
+                        de ámbito. No será posible cambiar su valor mediante la asignación.
+                        <br />
+                        Ejemplo: <code>const z = 2;</code>.
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+            <div class="col">
+                Una variable declarada usando la sentencia var o let sin asignarle un valor inicial tiene el valor
+                <span class="badge badge-danger">undefined</span>.
+                <br />
+                Al intentar acceder a una variable no declarada dará como resultado la excepción
+                <span class="badge badge-danger">ReferenceError</span>.
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+            <div class="col">
+                <header>
+                    <h2>Ámbito de una variable</h2>
+                </header>
+                <p>
+                    Cuando se declara una variable fuera de una función se le denomina <span
+                        class="badge badge-info">VARIABLE GLOBAL</span>, porque está disponible para cualquier otro
+                    bloque de código en el documento actual.
+                    <br />
+                    Cuando se declara una variable dentro de una función se le denomina <span
+                        class="badge badge-info">VARIABLE LOCAL</span>, porque está disponible sólo dentro de esa
+                    función donde fue creada.
+                </p>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+            <div class="col">
+                <header>
+                    <h2>Variable Hoisting</h2>
+                </header>
+                <p>
+                    Las variables en javascript pueden hacer referencia a una variable declarada más tarde y a este
+                    concepto se lo conoce como <span class="badge badge-info">HOISTING</span>.
+                    <br />
+                    Las variables son "elevadas" a la parte superior de la función o la declaración.
+                    <br />
+                    Las variables que no se han inicializado todavía devolverán un valor <span
+                        class="badge badge-danger">undefined</span>.
+                </p>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+            <div class="col">
+                <header>
+                    <h2>Tipos de datos básicos en js</h2>
+                    <small class="text-muted">ver archivo "introduccion_js.js" líneas 29-66</small>
+                </header>
+                <ul class="mt-3">
+                    <li>
+                        <span class="badge badge-info">String</span> Una cadena de texto. Para indicar que la variable
+                        es una cadena, debes escribirlo entre comillas.
+                    </li>
+                    <li>
+                        <span class="badge badge-info">Number</span> Un número. Los números no tienen comillas.
+                    </li>
+                    <li>
+                        <span class="badge badge-info">Boolean</span> Tienen valor verdadero/falso. true/false son
+                        palabras especiales en JS, y no necesitan comillas.
+                    </li>
+                    <li>
+                        <span class="badge badge-info">Array</span> Una estructura que te permite almacenar varios
+                        valores en una sola referencia.
+                    </li>
+                    <li>
+                        <span class="badge badge-info">Object</span> Básicamente cualquier cosa. Todo en JavaScript es
+                        un objeto y puede ser
+                        almacenado en una variable.
+                    </li>
+                    <li>
+                        <span class="badge badge-info">null</span> denota un valor nulo.
+                    </li>
+                    <li>
+                        <span class="badge badge-info">undefined</span> valor sin definir.
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+            <div class="col">
+                <header>
+                    <h2>Conversión de tipos de datos</h2>
+                </header>
+                <p>
+                    JavaScript es un lenguaje de tipo dinámico. Esto significa que, al declarar la variable no se debe
+                    especificar el tipo de dato.
+                    <br />
+                    Así, por ejemplo, se puede definir la siguiente variable:
+                    <br />
+                    <code>var ejemplo = 55;</code>
+                    <br />
+                    Y luego podemos asignarle otro valor de otro tipo como por ejemplo:
+                    <br />
+                    <code>ejemplo = "ahora el tipo de la variable será string, eh dicho!";</code>
+                    <br />
+                    Al tratarse de un lenguage de tipo dinámico esta asignación no causa un error.
+                </p>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+            <div class="col">
+                <header>
+                    <h2>Operadores básicos en js</h2>
+                    <small class="text-muted">ver archivo "introduccion_js.js" líneas 68-110</small>
+                </header>
+                <p class="mt-3">
+                    Un operador es básicamente un símbolo matemático que puede actuar sobre dos valores (o variables) y
+                    producir un resultado.
+                </p>
+                Operadores de asignación:
+                <ul>
+                    <li>
+                        Suma/concatenación <span class="badge badge-info">+</span>
+                        <br />
+                        Ejemplo: <code>X = X + 4</code> o <code>X += 4</code>.
+                    </li>
+                    <li>
+                        Resta <span class="badge badge-info">-</span>.
+                        <br />
+                        Ejemplo: <code>X = X - 4</code> o <code>X -= 4</code>.
+                    </li>
+                    <li>
+                        Multiplicación <span class="badge badge-info">*</span>.
+                        <br />
+                        Ejemplo: <code>X = X * 4</code> o <code>X *= 4</code>.
+                    </li>
+                    <li>
+                        División <span class="badge badge-info">/</span>.
+                        <br />
+                        Ejemplo: <code>X = X / 4</code> o <code>X /= 4</code>.
+                    </li>
+                    <li>
+                        Resto <span class="badge badge-info">%</span>.
+                        <br />
+                        Ejemplo: <code>X = X % 4</code> o <code>X %= 4</code>.
+                    </li>
+                </ul>
+                Operadores de comparación:
+                <ul>
+                    <li>
+                        Igualdad <span class="badge badge-info">==</span>.
+                        <br />
+                        Devuelve <code>true</code> si ambos operadores son iguales.
+                    </li>
+                    <li>
+                        Desigualdad <span class="badge badge-info">!=</span>.
+                        <br />
+                        Devuelve <code>true</code> si ambos operadores no son iguales.
+                    </li>
+                    <li>
+                        Estrictamente iguales <span class="badge badge-info">===</span>.
+                        <br />
+                        Devuelve <code>true</code> si ambos operadores son iguales y tienen el mismo tipo.
+                    </li>
+                    <li>
+                        Estrictamente desiguales <span class="badge badge-info">!==</span>.
+                        <br />
+                        Devuelve <code>true</code> si ambos operadores no son iguales y/o no son del mismo tipo.
+                    </li>
+                    <li>
+                        Mayor que <span class="badge badge-info">&gt;</span>.
+                        <br />
+                        Devuelve <code>true</code> si el de la izquierda es mayor que el de la derecha.
+                    </li>
+                    <li>
+                        Mayor o igual que <span class="badge badge-info">&gt;=</span>.
+                        <br />
+                        Devuelve <code>true</code> si el de la izquierda es mayor o igual que el de la derecha.
+                    </li>
+                    <li>
+                        Menor que <span class="badge badge-info">&lt;</span>.
+                        <br />
+                        Devuelve <code>true</code> si el de la izquierda es menor que el de la derecha.
+                    </li>
+                    <li>
+                        Menor o igual que <span class="badge badge-info">&lt;=</span>.
+                        <br />
+                        Devuelve <code>true</code> si el de la izquierda es menor o igual que el de la derecha.
+                    </li>
+                    <li>
+                        Negación <span class="badge badge-info">!</span>.
+                    </li>
+                </ul>
+                Operadores aritméticos extra:
+                <ul>
+                    <li>
+                        <span class="badge badge-info">Resto %</span>: corresponde al módulo de una operación. Devuelve
+                        el resto de una división.
+                        <br />
+                        Ejemplo: <code>12 % 5</code> devuelve 2.
+                    </li>
+                    <li>
+                        <span class="badge badge-info">Incremento ++</span>: incrementa en una unidad al operando. Si es
+                        usado <code>++x</code> devuelve el valor del operando después de añadirle 1. Si se usa
+                        <code>x++</code> devuelve el valor antes de añadirle 1.
+                        <br />
+                        Ejemplo: Si <code>x = 3</code>
+                        <br />
+                        <code>++x</code> => x = 4.
+                        <br />
+                        <code>x++</code> => devuelve 3 y luego asigna x = 4.
+                    </li>
+                    <li>
+                        <span class="badge badge-info">Decremento --</span>: resta una unidad al operando. Dependiende
+                        la posición con respecto al operando tiene el mismo comportamiento que el incremento.
+                        <br />
+                        Ejemplo: Si <code>x = 3</code>
+                        <br />
+                        <code>--x</code> => x = 2.
+                        <br />
+                        <code>x--</code> => devuelve 3 y luego asigna x = 2.
+                    </li>
+                </ul>
+                <br />
+                Hay algunos casos en los cuales javascript se comporta de formas "poco ortodoxas" como por ejemplo:
+                <br />
+                <img src="../imgs/js-operaciones-especiales.PNG" height="200px">
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+            <div class="col">
+                <header>
+                    <h2>Algunas funciones útiles de js</h2>
+                    <small class="text-muted">ver archivo "introduccion_js.js" líneas 112-end</small>
+                </header>
+                <ul class="mt-3">
+                    <li>
+                        <span class="badge badge-info">alert(texto)</span> (Ejemplo: <button
+                            class="btn btn-sm btn-primary" onclick="Alertar('Se te alerta de algo!');">Alertar</button>)
+                        envía una alerta al usuario a través del navegador con el texto que se indique por parámetro.
+                    </li>
+                    <li>
+                        <span class="badge badge-info">confirm(texto)</span> (Ejemplo: <button
+                            class="btn btn-sm btn-primary" onclick="Preguntar();">Preguntar</button>)Realiza una
+                        pregunta al usuario a través de un popup en el navegador y captura su respuesta como positiva
+                        (true) o negativa (false).
+                    </li>
+                    <li>
+                        <span class="badge badge-info">isNan(valor)</span> Determinará si el valor que se le pasa como
+                        parámetro no es numérico.
+                    </li>
+                    <li>
+                        <span class="badge badge-info">parseInt(texto)</span> Intentará hacer un parse del texto que se
+                        le pase como parámetro a un valor de tipo number entero.
+                    </li>
+                    <li>
+                        <span class="badge badge-info">parseFloat(texto)</span> Intentará hacer un parse del texto que
+                        se le
+                        pase como parámetro a un valor de tipo number con coma, o sea, un float.
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+            <div class="col">
+                <header>
+                    <h2>Operadores ternarios</h2>
+                </header>
+                <p>
+                    Se necesitan tres operandos:
+                    <br />
+                    <code>condición ? valor1 : valor2;</code>
+                    <br />
+                    Si la condición es true, retornará el valor1, sino el valor2.
+                    <br />
+                    Se trata de un comportamiento análogo al <code>if(conodición){sentencia1} else {sentencia2}</code>.
+                </p>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+            <div class="col">
+                <header>
+                    <h2>Valores falsos (falsy)</h2>
+                </header>
+
+                Los siguientes valores se evalúan como <code>false</code> en javascript:
+                <ul>
+                    <li>false</li>
+                    <li>undefined</li>
+                    <li>null</li>
+                    <li>0</li>
+                    <li>NaN (not a number)</li>
+                    <li>"" (la cadena vacía)</li>
+                </ul>
+                <br />
+                El resto de los valores, incluídos todos los objetos, son evaluados como <code>true</code> cuando son
+                pasados a una sentencia condicional.
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+            <div class="col">
+                <header>
+                    <h2>Funciones</h2>
+                </header>
+                Las funciones son uno de los pilares fundamentales en javascript.
+                <br />
+                Una función se compone de una secuencia de declaraciones que conforman el cuerpo de la función. Se
+                pueden pasar valores a una función (parámetros de entrada) y la función puede devolver un valor (retorno
+                de la función).
+                <br />
+                Para devolver un valor específico una función debe tener una sentencia <code>return</code>.
+                <br />
+                Los parámetros en la llamada a una función son los <code>argumentos</code> en la función.
+                <br />
+                Los <code>argumentos</code> se pasan a las funciones por <code>valor</code>.
+                <br />
+                Un ejemplo de función y de llamado a dicha función:
+                <br />
+                <img src="../imgs/js-funcion.PNG">
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="alert alert-warning">
+            Para mas informacion sobre operadores y variables en javascript ver el siguiente <a target="_blank"
+                href="https://developer.mozilla.org/es/docs/Learn/Getting_started_with_the_web/JavaScript_basics">link</a>.
+        </div>
+    </main>
+
+    <div class="row">
+        <div class="col text-center">
+            <a class="btn btn-lg btn-outline-info" href="../2/selectores.html">
+                Ir a la siguiente sección >>
+            </a>
+        </div>
+    </div>
+
+    <script src="../../footer.js"></script>
+
+    <script type="text/javascript" src="introduccion_js.js"></script>
+</body>
+
+</html>

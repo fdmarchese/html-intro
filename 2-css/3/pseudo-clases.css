@@ -1,0 +1,26 @@
+.clase-ejemplo {
+  background-color: #bbc6d8;
+  color: #000;
+  font-weight: normal;
+  text-decoration: none;
+}
+
+.clase-ejemplo:hover {
+  background-color: #5168ec;
+}
+
+.clase-ejemplo:visited {
+  color: #ec5151;
+  font-weight: bold;
+}
+
+.clase-ejemplo:disabled {
+  background-color: #ec5151;
+  color: #890b0b;
+  cursor: not-allowed;
+}
+
+:checked + label {
+  color: #ec5151;
+  margin-left: 10px;
+}

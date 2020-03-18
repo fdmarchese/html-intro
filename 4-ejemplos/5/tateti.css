@@ -1,0 +1,36 @@
+.tablero {
+  width: 150px;
+  margin: auto;
+}
+
+.tablero > div {
+    padding: 0px;
+}
+
+.tablero > div > div {
+    border: 1px solid #000;
+    height: 50px;
+    cursor: pointer;
+    padding: 12px;
+    font-weight: bold;
+}
+
+.bg-japanese-laurel {
+    background-color: #328104;
+}
+
+.bg-cornflower-blue {
+    background-color: #6174ED;
+}
+
+.japanese-laurel {
+    color: #328104;
+}
+
+.cornflower-blue {
+    color: #6174ED;
+}
+
+.ocultar {
+    display: none;
+}

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<!--
+    Esta primera línea indica el tipo de documento que estamos creando.
+    Esta línea debe ser la primera línea del archivo, sin espacios o líneas que la precedan. 
+    De esta forma, el modo estándar del navegador es activado y las incorporaciones de HTML5 son interpretadas siempre que sea posible, 
+    o ignoradas en caso contrario.
+-->
+
+<!-- 
+    La estructura tipo árbol de este lenguaje tiene su raíz en el elemento <html>. Este elemento envolverá al resto del código.
+    El atributo lang en la etiqueta de apertura <html> es el único atributo que necesitamos especificar en HTML5. 
+    Este atributo define el idioma humano del contenido del documento que estamos creando, en este caso "es" (español).
+ -->
+<html lang="es">
+<!-- 
+    Dentro de las etiquetas <head> definiremos el título de nuestra página web, declararemos el set de caracteres correspondiente, 
+    proveeremos información general acerca del documento e incorporaremos los archivos externos con estilos, códigos Javascript o incluso imágenes 
+    necesarias para generar la página en la pantalla.
+    Excepto por el título y algunos íconos, el resto de la información incorporada en el documento entre estas etiquetas es invisible para el usuario.
+ -->
+
+<head>
+  <!-- 
+      Hay varios tipos de etiqueta <meta> que pueden ser incluidas para declarar información general sobre el documento,
+      pero esta información no es mostrada en la ventana del navegador, es solo importante para motores de búsqueda y 
+      dispositivos que necesitan hacer una vista previa del documento u obtener un sumario de la información que contiene.
+     -->
+  <meta charset="UTF-8" />
+  <meta description="ejemplo de uso básico de html" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="Federico Marchese" />
+
+  <!-- es el ícono que se mostrará en la página web -->
+  <link rel="shortcut icon" href="../../resources/favicon.ico" />
+  <!-- Es el título que tendrá la página html -->
+  <title>estructura básica de Html</title>
+
+  <!-- 
+      Este elemento "link" indica que se utiliza como css (hoja de estilo en cascada) al framework bootstrap.
+      Se verá un poco más en detalle este tema cuando abordemos css. 
+     -->
+  <link rel="stylesheet" href="../../resources/css/bootstrap.min.css" />
+
+  <!--
+    Este elemento "style" permite definir dentro los estilos de css que serán utilizados dentro del documento html.
+  -->
+  <style>
+    .codigo {
+      color: #ffc107;
+      background-color: #343a40;
+      padding: 1px;
+      border-radius: 5px;
+      font-size: 120%;
+    }
+  </style>
+</head>
+
+<!--
+    La siguiente gran sección que es parte principal de la organización de un documento HTML es el cuerpo.
+    El cuerpo representa la parte visible de todo documento y es especificado entre etiquetas <body>.
+  -->
+
+<body>
+  <script src="../../navbar.js"></script>
+
+  <main class="container">
+    <div class="alert alert-warning">
+      El Lenguaje de Marcado de Hipertexto (HTML) es el código que se utiliza para estructurar y desplegar una página
+      web y sus contenidos. Por ejemplo, sus contenidos podrían ser párrafos, una lista con viñetas, o imágenes y tablas
+      de datos.
+      <br />
+      HTML provee de múltiples elementos para poder estructurar de una manera correcta y proveer al navegador web de la
+      información semántica correcta para cada porción de información que se esté proporcionando.
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <header>
+          <h2>¿Qué es HTML?</h2>
+        </header>
+        <p>
+          HTML no es un lenguaje de programación, sino que se trata de un lenguaje de marcado que define la estructura
+          de un determinado contenido. HTML consiste en una serie de elementos que se utilizan para agrupar diferentes
+          secciones de contenido para que se visualicen o comporten de una determinada manera. Las etiquetas html pueden
+          hacer de una palabra o una imagen un hipervínculo a otro sitio, se pueden cambiar palabras a cursiva, agrandar
+          o achicar la letra, entre tantas otras cosas que se pueden hacer.
+          <br />
+          Por ejemplo, si tenemos el texto:
+          <br />
+          <span class="codigo">Este es un ejemplo</span>
+          <br />
+          Si se quiere especificar que se trata de un párrafo podemos utilizar para ello el markup &lt;p&gt;:
+          <br />
+          <span class="codigo">&lt;p&gt;Este es un ejemplo&lt;/p&gt;</span>
+        </p>
+      </div>
+    </div>
+
+    <hr />
+
+    <div class="row">
+      <div class="col">
+        <header>
+          <h2>Anatomía de un elemento HTML</h2>
+        </header>
+        <div class="text-center">
+          <img src="../imgs/anatomia-elemento-html.PNG" height="200px" />
+        </div>
+        <p>
+          Las partes principales del elemento expuesto son:
+          <br />
+          <ul>
+            <li>
+              <span class="badge badge-primary">TAG de apertura:</span>
+              consiste en el nombre del elemento (en este caso, p), encerrado por paréntesis
+              angulares (&lt; &gt;) de apertura y cierre. Establece dónde comienza o empieza a tener efecto el elemento
+              — en este caso, dónde es el comienzo del párrafo.
+            </li>
+            <li>
+              <span class="badge badge-primary">TAG de cierre:</span>
+              es igual que el tag de apertura, excepto que incluye una barra de cierre (/) antes del nombre de la
+              etiqueta. Establece dónde termina el elemento — en este caso dónde termina el párrafo.
+            </li>
+            <li>
+              <span class="badge badge-primary">Contenido:</span>
+              este es el contenido del elemento, que en este caso es sólo texto.
+            </li>
+            <li>
+              <span class="badge badge-primary">TAG de apertura:</span>
+              tag de apertura + tag de cierre + el contenido = elemento.
+            </li>
+          </ul>
+        </p>
+      </div>
+    </div>
+
+    <hr />
+
+    <div class="row">
+      <div class="col">
+        <header>
+          <h2>Atributos</h2>
+        </header>
+        <p>
+          Los elementos pueden también tener atributos, que se ven así:
+          <br />
+          <code>&lt;p <span class="codigo">class="codigo"</span> &gt;Este es un ejemplo&lt;/p&gt;</code>
+          <br />
+          Los atributos proporcionan información adicional relativa al elemento que no será visualizada como contenido.
+          En este caso, por ejemplo, se utiliza el atributo class que permite establecer las clases que se aplicaran al
+          elemento en cuestión dando un nombre identificativo, que puede ser usado luego para proveer al elemento
+          información de estilos.
+          <br />
+          Un atributo debe tener siempre:
+          <br />
+          <ul>
+            <li>
+              Un espacio entre éste y el nombre del elemento (o del atributo previo, si el elemento ya posee uno o más
+              atributos).
+            </li>
+            <li>
+              El nombre del atributo, seguido por un signo de igual (=).
+            </li>
+            <li>
+              Comillas de apertura y de cierre, encerrando el valor del atributo.
+            </li>
+          </ul>
+        </p>
+      </div>
+    </div>
+
+    <hr />
+
+    <div class="row">
+      <div class="col">
+        <header>
+          <h2>Anidamiento de elementos</h2>
+        </header>
+        <p>
+          Html permite colocar elementos dentro de otros elementos y esto es llamado <span
+            class="badge badge-primary">ANIDAMIENTO</span>. Si, por ejemplo, queremos resaltar una palabra del texto (en
+          nuestro ejemplo la palabra "un"), podemos encerrarla en un elemento &lt;strong&gt;, que significa que dicha
+          palabra
+          debe ser enfatizada (visualmente se mostrará en negrita).
+          <br />
+          <code>&lt;p&gt;Este es &lt;strong&gt;un&lt;/strong&gt; ejemplo&lt;/p&gt;</code>
+          <br />
+          <span class="badge badge-danger">SIEMPRE</span> tenemos que asegurarnos de aplicar correctamente los tag de
+          apertura y cierre para que quede correctamente anidado los diferentes niveles en los que lo apliquemos, de lo
+          contrario podríamos generar conflictos. Para aclarar el punto, en el ejemplo estamos utilizando un tag de
+          apertura &lt;p&gt;, y luego se abre otro tag anidado (dentro del anterior) de tipo &lt;strong&gt;, por lo
+          tanto hay que asegurarse de cerrar primero &lt;/strong&gt; y luego podemos proceder a cerrar &lt;p&gt;. Por
+          ejemplo este escenario es incorrecto:
+          <br />
+          <code>&lt;p&gt;Este es &lt;strong&gt;un ejemplo&lt;/p&gt;&lt;/strong&gt;</code>
+          <br />
+          Los elementos deben abrirse y cerrarse ordenadamente, de forma tal que se encuentren claramente dentro o
+          fuera el uno del otro. Si éstos se encuentran solapados, el navegador web tratará de evaluar lo que mejor se
+          adapta a lo que se intentó hacer, pero en ese caso estamos supeditados a lo que cada browser interprete y
+          podremos encontrarnos con resultados inesperados en algunos casos, con lo que esto <span
+            class="badge badge-danger">NO SE DEBE HACER NUNCA!</span>
+        </p>
+      </div>
+    </div>
+
+    <hr />
+
+    <div class="row">
+      <div class="col">
+        <header>
+          <h2>Elementos vacíos</h2>
+        </header>
+        <p>
+          Algunos elementos no poseen contenido, y son llamados elementos vacíos. En este grupo de elementos podemos
+          encontrar por ejemplo el elemento &lt;img&gt; como se expone a continuación:
+          <br />
+          <code>&lt;img src="una-imagen-random.png" alt="esta es una imagen de prueba" &gt;</code>
+          <br />
+          En este caso proporcionamos dos atributos particulares del elemento img, pero no hay etiqueta de cierre
+          &lt;/img&gt; ni contenido dentro de los tags. Esto es porque un elemento de imagen no encierra contenido al
+          cual afectar. Su propósito es desplegar una imagen en la página HTML, en el lugar en que aparece.
+        </p>
+      </div>
+    </div>
+
+    <hr />
+
+    <div class="row">
+      <div class="col">
+        <header>
+          <h2>Estructura de un documento HTML</h2>
+        </header>
+        <p>
+          Hasta aquí se expusieron elementos HTML individuales, pero éstos no son muy útiles por sí solos. A
+          continuación se expone cómo los elementos individuales son combinados para formar una página HTML.
+          <br />
+          Este es un modelo básico de una página html:
+          <br />
+          <img src="../imgs/documento-html.PNG" height="200px">
+          <br />
+          Dentro de los elementos expuestos en el ejemplo anterior podemos ver:
+          <ul>
+            <li>
+              <span class="badge badge-primary">&lt;!DOCTYPE html&gt;</span> indica el tipo de documento. Anteriormente,
+              cuando HTML
+              era joven (cerca de 1991/2), los tipos de documento actuaban como vínculos a un conjunto de reglas que el
+              código HTML de la página debía seguir para ser considerado bueno, lo que podía significar el chequeo
+              automático de errores y algunas otras cosas de utilidad.
+              Sin embargo, hoy día es simplemente un artefacto antiguo que a nadie le importa, pero que debe ser
+              incluido para que todo funcione correctamente. No se considera importante adentrarse más en el tema.
+            </li>
+            <li>
+              <span class="badge badge-primary">el elemento &lt;html&gt;</span> Este elemento encierra todo el contenido
+              de la página
+              entera. Se le conoce como el elemento raíz (root element).
+            </li>
+            <li>
+              <span class="badge badge-primary">el elemento &lt;head&gt;</span> Este elemento actúa como un contenedor
+              de todo
+              aquello que queremos incluir en la página HTML que no es contenido visible por los visitantes de la
+              página. Incluye contenidos como palabras clave, una descripción de la página que quieres que aparezca en
+              resultados de búsquedas, CSS para dar estilo al contenido, declaraciones del juego de caracteres
+              (charset), etc.
+            </li>
+            <li>
+              <span class="badge badge-primary">el elemento &lt;body&gt;</span> Encierra todo el contenido que deseas
+              mostrar a los
+              usuarios web que visiten la página, ya sea texto, imágenes, videos, juegos, pistas de audio reproducibles,
+              y demás.
+            </li>
+            <li>
+              <span class="badge badge-primary">el elemento &lt;meta charset="utf-8"&gt;</span> Este elemento establece
+              el juego de
+              caracteres que el documento usará es utf-8, que incluye casi todos los caracteres de todos los idiomas
+              humanos. Básicamente, puede manejar cualquier contenido de texto que queramos incluir. Si no se establece
+              se utilizará el defecto para el tipo de documento vigente (el tipo de documento vigente html5 utiliza
+              utf-8).
+            </li>
+            <li>
+              <span class="badge badge-primary">el elemento &lt;title&gt;</span> Establece el título de la página, que
+              es el título
+              que aparece en la pestaña del navegador cuando la página es cargada y se usa para describir la página
+              cuando sea añadida a los marcadores o como favorita.
+            </li>
+          </ul>
+        </p>
+      </div>
+    </div>
+
+    <hr />
+
+    <div class="row">
+      <div class="col">
+        <header>
+          <h2>Ejemplo de estructura básica de un documento Html</h2>
+        </header>
+        <p>
+          &lt;html&gt;
+          <br />
+          &emsp;&lt;head&gt;
+          <br />
+          &emsp;&lt;head /&gt;
+          <br />
+          &emsp;&lt;body&gt;
+          <br />
+          &emsp;&lt;body /&gt;
+          <br />
+          &lt;html /&gt;
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <div class="row">
+    <div class="col text-center">
+      <a class="btn btn-lg btn-outline-info" href="../2/elementos-html.html">
+        Ir a la siguiente sección >>
+      </a>
+    </div>
+  </div>
+
+  <script src="../../footer.js"></script>
+</body>
+
+</html>

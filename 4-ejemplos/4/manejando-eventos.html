@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Federico Marchese" />
+
+    <link rel="shortcut icon" href="../../resources/favicon.ico" />
+
+    <title>Manejando eventos</title>
+
+    <link rel="stylesheet" href="../../resources/css/bootstrap.min.css" />
+</head>
+
+<body onmousedown="mostrarCoordenadas(event)" style="position: fixed; top:0;bottom: 0; left: 0; right: 0;">
+    <main class="container">
+        <div class="alert alert-dark">
+            Utilizando los eventos mousedown y mousemove logramos capturar el click del mouse y el movimiento del
+            puntero respectivamente para manejar dichos eventos.
+        </div>
+
+        <hr />
+        <div class="alert alert-info">
+            Para ver las coordenadas del mouse haga clic en cualquier parte de la p&aacute;gina.
+        </div>
+
+        <hr />
+
+        <div class="alert alert-warning" id="alertCoordenadas">
+        </div>
+    </main>
+
+    <script src="manejando-eventos.js"></script>
+</body>
+
+</html>
