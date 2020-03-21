@@ -1,3 +1,4 @@
+//Fines academicos
 var path = window.location.pathname;
 var dir = path.substring(1, path.lastIndexOf('/')) + '/';
 var pisoRoot = dir.lastIndexOf('html-intro-master');
