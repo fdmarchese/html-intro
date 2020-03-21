@@ -1,6 +1,6 @@
 var path = window.location.pathname;
 var dir = path.substring(1, path.lastIndexOf('/')) + '/';
-var pisoRoot = dir.lastIndexOf('html-basics');
+var pisoRoot = dir.lastIndexOf('html-intro-master');
 var techo = dir.indexOf('/', pisoRoot);
 var pathRoot = dir.substring(0, techo);
 
