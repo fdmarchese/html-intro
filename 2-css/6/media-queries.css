@@ -1,0 +1,33 @@
+main{
+    text-align:justify;
+}
+
+.badge.normal{
+    font-size:100%;
+}
+
+p#multicolor{
+    border:solid 1px;
+    padding: 5px;
+    background-color:lightgray;
+}
+
+
+@media (max-width: 1000px) {
+    h1 {
+        font-size: 150%;
+    }
+
+    p#multicolor {
+        font-size: 125%;
+        color: white;
+        background-color:green;
+    }
+}
+
+pre{
+    background-color:black;
+    color:white;
+    text-align:left;  
+    font-family:Consolas;
+}
