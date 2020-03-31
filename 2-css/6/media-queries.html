@@ -1,0 +1,296 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Longo Mariano" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Queries</title>
+
+    <link rel="shortcut icon" href="../../resources/favicon.ico" />
+
+    <link rel="stylesheet" href="../../resources/css/bootstrap.min.css" />
+
+    <link rel="stylesheet" href="media-queries.css" />
+
+    <!--Ejemplo de cómo hacer una referencia a una hoja de estilo, pero que solo se aplicará si se cumple la condición definida en la Media Query.-->
+    <link rel="stylesheet" media="(max-width: 600px)" href="pantallaPequenia.css" />
+
+
+</head>
+
+<body>
+    <script src="../../navbar.js"></script>
+
+    <main class="container mt-3">
+        <h1>Media Queries</h1>
+        <div class="row mt-3">
+            <div class="col">
+                <div class="alert alert-info">
+                    Las media queries (en español "consultas de medios") son útiles cuando deseas modificar tu página web o aplicación
+                    en función del tipo de dispositivo (como una impresora o una pantalla) o de características y parámetros específicos
+                    (como la resolución de la pantalla o el ancho del viewport del navegador).
+                </div>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+            <div class="col">
+                <h2>Sintaxis</h2>
+                <p>
+                    Las media queries consisten de un tipo de medio opcional y una o más expresiones de características de medios, que se resuelven en verdadero o falso.
+                    Varias consultas se pueden combinar utilizando operadores lógicos.
+                </p>
+                <p>
+                    <span class="badge badge-dark">No distinguen entre mayúsculas y minúsculas</span>
+                </p>
+                <p>
+                    El resultado de la consulta es <span class="badge badge-success">verdadero</span>
+                    cuando el tipo de medio (si se especifica) coincide con el dispositivo
+                    en el que se está mostrando el documento y todas las expresiones en el media query son
+                    <span class="badge badge-success">verdaderas</span>.
+                    En este caso, se aplica los estilos correspondientes, siguiendo las reglas usuales de CSS.
+                </p>
+                <p>
+                    <span class="badge badge-dark">
+                        Las consultas sobre tipos de medios desconocidos son siempre <span class="badge badge-danger normal">falsas</span>.
+                    </span>
+                </p>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+            <div class="col">
+                <h2>Queries</h2>
+                <p>
+                    Las queries son insensibles a las mayúsculas y minusculas y aquellas que contengan medios desconocidos, siempre daran como resultado Falso. Por consiguiente no se aplicarán.
+                </p>
+
+                <h3>Media Features</h3>
+                <p>
+                    Algunos ejemplos del tipo <span class="badge badge-info">Media Feature</span> son:
+                </p>
+                <ul>
+                    <li>width | min-width | max-width <span class="badge badge-secondary">Ancho especifico</span></li>
+                    <li>height | min-height | max-height <span class="badge badge-secondary">Alto especifico</span></li>
+                    <li>device-width | min-device-width | max-device-width <span class="badge badge-secondary">Ancho especifico del dispositivo</span></li>
+                    <li>device-height | min-device-height | max-device-height <span class="badge badge-secondary">Alto especifico del dispositivo</span></li>
+                    <li>aspect-ratio | min-aspect-ratio | max-aspect-ratio<span class="badge badge-secondary">Relación de aspecto</span></li>
+                    <li>device-aspect-ratio | min-device-aspect-ratio | max-device-aspect-ratio <span class="badge badge-secondary">Rel. aspecto del dispositivo</span></li>
+                    <li>resolution | min-resolution | max-resolution<span class="badge badge-secondary">Resolución</span></li>
+                    <li>
+                        Otros: color | min-color | max-color
+                        | color-index | min-color-index | max-color-index
+                        | monochrome | min-monochrome | max-monochrome
+                        | scan | grid
+                    </li>
+                </ul>
+                <div class="alert alert-danger">
+                    Nota: Los paréntesis son requeridos alrededor de las expresiones, no utilizarlos es un error.
+                    <br>
+                    expression: ( &lt;media_feature&gt; [: &lt;value&gt;]? )
+                </div>
+
+                <h3>Media Types</h3>
+                <p>
+                    También se puede consultar por el tipo de medio:
+                </p>
+                <table class="table table-dark">
+                    <thead>
+                        <tr>
+                            <th scope="col">Valor</th>
+                            <th scope="col">Descripción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td scope="col">all</td>
+                            <td scope="col">Es el valor por defecto, y es usado para todos los tipos de dispositivos.</td>
+                        </tr>
+                        <tr>
+                            <td scope="col">print</td>
+                            <td scope="col">Usado por impresoras</td>
+                        </tr>
+                        <tr>
+                            <td scope="col">screen</td>
+                            <td scope="col">Usado por pantallas de computadoras, tablets, teléfonos móviles, etc.</td>
+                        </tr>
+                        <tr>
+                            <td scope="col">speech</td>
+                            <td scope="col">Usado por lectores de pantallas que "Leen" la página en voz alta.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h3>Operadores lógicos</h3>
+                <p>
+                    Se pueden redactar queries utilizando operadores lógicos, incluyendo
+                    <span class="badge badge-info">not</span>,<span class="badge badge-info">and</span> y <span class="badge badge-info">only</span>.
+
+                    Además se puede combinar múltiples queries en una lista separada por comas múltiples; si cualquiera de las queries en la lista es verdadera, la hoja de estilo asociada es aplicada. Esto es equivalente a una operación lógica "or".
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <h4>and</h4>
+                <p>El operador and es usado para colocar juntas múltiples funciones multimedia</p>
+            </div>
+            <div class="col-8">
+                <pre>@media (min-width: 700px) and (orientation: landscape) { ... }</pre>
+
+                <div class="alert-info">
+                    Esta query solo retornara verdadero si la ventana tiene un ancho de 700px o mas y la pantalla esta en formato horizontal.
+                </div>
+                <br>
+                <div class="alert-info">
+                    Ahora si usted quiere aplicar esta opción solo si el tipo de medio es una pantalla, usted puede utilizar la siguiente cadena:
+                </div>
+
+                <pre>
+@media screen and (min-width: 700px) and (orientation: landscape) { ... }
+</pre>
+
+
+
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col">
+                <h4>not</h4>
+                <p>
+                    El operador not aplica a todo el query y retorna verdadero si es posible y sino retorna falso
+                    (como por ejemplo monochrome en un monitor a color o una ventana con un ancho mínimo de min-width: 700px en un monitor de 600px).
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <p>
+                    Un not negara un query si es posible, pero no a todos los query posibles si están ubicados en una lista separada por comas.
+                </p>
+            </div>
+            <div class="col-8">
+                <pre>
+@media not all and (monochrome) { ... }
+
+<code>Significa que en realidad se evalúa así:</code>
+
+@media not (all and (monochrome)) { ... }
+</pre>
+            </div>
+        </div>
+
+        <div class="row alert-warning">
+            <div class="col">
+                IMPORTANTE!!! El operador not no puede ser usado para negar un query individual, solo para un query completo. En otras palabras
+                , es evaluado al final de todo.
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col">
+                <h4>only</h4>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-4">
+                <p>
+                    El operador only previene que navegadores antiguos que no soportan queries con funciones que apliquen a los estilos asignados:
+                </p>
+            </div>
+            <div class="col-8">
+                <pre>
+&lt;link rel="stylesheet" media="only screen and (color)" href="Ejemplo.css" /&gt;</pre>
+            </div>
+        </div>
+        <hr />
+
+        <div class="row">
+            <div class="col-6">
+                <h2>Ejemplos</h2>
+                <p>
+                    El siguiente ejemplo, muestra como definirle el fondo del elemento body de color azul, haciendo uso de un selector de nombre, pero este solo será aplicado cuando la ventana
+                    del navegador, tenga 600px de ancho o menos y que
+                </p>
+            </div>
+            <div class="col-6">
+                <br /><br />
+                <pre>
+@media only screen and (max-width: 600px) {
+    body {
+        background-color: blue;
+    }
+}</pre>
+            </div>
+            <div class="col-6">
+                <p>
+                    El siguiente ejemplo muestra un menú que flotará a la izquierda de la página si la ventana gráfica tiene 480 píxeles de ancho o más (si la ventana gráfica tiene menos de 480 píxeles, el menú estará en la parte superior del contenido)
+                </p>
+            </div>
+            <div class="col-6">
+                <pre>
+@media screen and (min-width: 480px) {
+    #leftsidebar {
+        width: 200px; 
+        float: left;
+    }
+    #main {
+        margin-left: 216px;
+    }
+}</pre>
+            </div>
+            <div class="col-6">
+                <h3>Ejemplo funcional</h3>
+                <p>
+                    Debajo encontraran un cuadro, el cual sufrirá modificaciones en referencia a los estilos aplicados, dependiendo del
+                    tamaño de maximo de la ventana del navegador para mostrar contenido.
+                </p>
+                <p>
+                    Para realizar la prueba, siga las indicaciones descritas en el siguiente cuadro, o utilize la herramienta para desarrolladores, presionando la tecla <span class="badge badge-info">F12</span> y modifique el ancho de la misma.
+                </p>
+            </div>
+            <div class="col-6">
+                <br /><br />
+                <p id="multicolor">
+                    Cambie el tamaño de la ventana, y notará que al achicarla, este sufrirá cambios con respecto al fondo, tamaño y color de letra. Verde si es inferior a inferior a 1000px y azul si es inferior a 600px.
+                </p>
+            </div>
+        </div>
+
+        <div class="alert alert-warning">
+            Para más información acerca de los media queries ver los siguientes links:
+            <ul>
+                <li>
+                    <a href="https://developer.mozilla.org/es/docs/CSS/Media_queries" target="_blank">Media Queries - Developer Mozilla </a>
+                </li>
+                <li>
+                    <a href="https://www.w3schools.com/css/css_rwd_mediaqueries.asp" target="_blank">Diseño responsivo - W3Schools</a>
+                </li>
+                <li>
+                    <a href="https://www.w3schools.com/cssref/css3_pr_mediaquery.asp">CSS @media Rule - W3Schools</a>
+                </li>
+            </ul>
+        </div>
+    </main>
+
+    <div class="row">
+        <div class="col text-center">
+            <a class="btn btn-lg btn-outline-info" href="../../3-js/index.html">
+                Ir a la siguiente sección >>
+            </a>
+        </div>
+    </div>
+
+    <script src="../../footer.js"></script>
+</body>
+</html>
